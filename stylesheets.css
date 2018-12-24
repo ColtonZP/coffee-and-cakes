@@ -35,9 +35,10 @@ body {
 .about {
     margin-top: 2%;
     position: relative;
-    background: #70ecb4 url("imgs/coffeeshop.jpg") no-repeat center/cover;
+    background: #70ecb4 url("imgs/coffeeshop.jpeg") no-repeat center/cover;
     border-radius: 10px;
     height: 10vh;
+    box-shadow: 0 0 10px 0 #000;
 }
 
 .about div {
@@ -56,9 +57,10 @@ li {
     list-style: none;
     border-radius: 10px;
     margin-bottom: 2%;
+    box-shadow: 0 0 10px 0 #000;
 }
 
-li .coffeeImg {
+.coffeeImg {
     width: 100%;
     height: auto;
     border-radius: 10px 10px 0 0;
@@ -89,6 +91,10 @@ ul {
     padding-left: 10px;
 }
 
+.special p {
+    text-align: center;
+}
+
 button {
     cursor: pointer;
 }
@@ -115,11 +121,16 @@ a .badge {
 .ourStore img {
     width: 100%;
     border-radius: 10px;
+    box-shadow: 0 0 10px 0 #000;
 }
 
 .container {
     width: 90%;
     margin: auto;
+}
+
+.specials {
+    width: 100%;
 }
 
 @media screen and (min-width: 768px) {
@@ -136,27 +147,28 @@ a .badge {
         height: 20vh;
     }
 
-    li {
+    .coffees li {
         width: 32.3%;
     }
 
-    .ourStore {
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: row; 
-    }
+    .ourStore::after {
+        content: "";
+        clear: both;
+        display: table;
+      }
 
     .ourStore img {
-        width: 50%;
-        align-self: flex-start;
+        width: 40%;
+        float: right;
+        margin-left: 10px; 
     }
 
-    .ourStore .storeP {
-        width: 50%;
+    .ourStore p {
+        margin: 0 0 10px;
     }
 
-    .storeP p {
-        margin: 0 0 10px 10px;;
+    .specials {
+        width: 24%;
     }
 }
 
