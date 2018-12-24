@@ -1,0 +1,167 @@
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+html, body {
+    margin: 0;
+}
+
+header {
+    background-color: #c19371;
+}
+
+a {
+    color: #000;
+}
+
+nav a{
+    font-size: 2rem;
+    text-decoration: none;
+    position: relative;
+}
+
+nav .right {
+    float: right;
+}
+
+nav .right a {
+    margin-left: 20px;
+}
+
+body {
+    background-color: #70ecb4;
+}
+
+.about {
+    margin-top: 2%;
+    position: relative;
+    background: #70ecb4 url("imgs/coffeeshop.jpg") no-repeat center/cover;
+    border-radius: 10px;
+    height: 10vh;
+}
+
+.about div {
+    margin: 0 0 10px 10px;
+    color: #fff;
+    position: absolute;
+    bottom: 0;
+}
+
+.about a {
+    color: #FFF;
+}
+
+li {
+    background-color: #fff;
+    list-style: none;
+    border-radius: 10px;
+    margin-bottom: 2%;
+}
+
+li .coffeeImg {
+    width: 100%;
+    height: auto;
+    border-radius: 10px 10px 0 0;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.coffee {
+    position: relative;
+}
+
+.coffee button {
+    font-size: 1rem;
+    width: 100%;
+    height: 30%;
+    background-color: #a8c5c1;
+    border-style: none;
+    border-radius: 0 0 10px 10px;
+}
+
+.coffee p {
+    padding-left: 10px;
+}
+
+button {
+    cursor: pointer;
+}
+
+.badge {
+    position: absolute;
+    right: 0;
+    font-size: 1em;
+    background-color:#eec674;
+    padding: 0 10px;
+    border-radius: 10px;
+}
+
+a .badge {
+    width: 14px;
+    right: -5px;
+    font-size: 12px;
+    padding: 0;
+    border-radius: 50px;
+    border: 3px solid #c19371;
+    text-align: center;
+}
+
+.ourStore img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.container {
+    width: 90%;
+    margin: auto;
+}
+
+@media screen and (min-width: 768px) {
+    .about address, .about a {
+        font-size: 2rem;
+    }
+
+    .container {
+        width: 80%;
+        margin: auto;
+    }
+
+    .about {
+        height: 20vh;
+    }
+
+    li {
+        width: 32.3%;
+    }
+
+    .ourStore {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row; 
+    }
+
+    .ourStore img {
+        width: 50%;
+        align-self: flex-start;
+    }
+
+    .ourStore .storeP {
+        width: 50%;
+    }
+
+    .storeP p {
+        margin: 0 0 10px 10px;;
+    }
+}
+
+@media screen and (min-width: 1500px) {
+    li {
+        width: 19%;
+    }
+}
