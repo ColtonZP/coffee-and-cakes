@@ -133,6 +133,17 @@ a .badge {
     width: 100%;
 }
 
+footer {
+    background-color: #c19371;
+    margin: 0;
+    text-align: center;
+}
+
+footer p {
+    margin-bottom: 0;
+    padding: 10px;
+}
+
 @media screen and (min-width: 768px) {
     .about address, .about a {
         font-size: 2rem;
@@ -147,7 +158,7 @@ a .badge {
         height: 20vh;
     }
 
-    .coffees li {
+    li {
         width: 32.3%;
     }
 
