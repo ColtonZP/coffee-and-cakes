@@ -5,7 +5,7 @@ let bag = [];
 let bagCount = localStorage.getItem("itemCount");
 
 function updateBag() {
-  if (~bagCount) {
+  if (!bagCount) {
     bagCount = 0;
   }
   bagCountDOM.innerHTML = bagCount;
@@ -15,8 +15,8 @@ function updateBag() {
 updateBag();
 
 coffees.addEventListener('click', (event) => {
-  console.log(event.target.value);
-  if (event.target.className === 'add') {
+  console.log(event.target.parent);
+  if (event.target.className === 'add' || event.target.parentElement.className === 'add') {
     bagCount++;
     bag.push("coffee" + bagCount);
     localStorage.setItem("items", bag);
