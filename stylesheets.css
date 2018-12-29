@@ -149,6 +149,14 @@ footer p {
 }
 
 @media screen and (min-width: 768px) {
+    nav a {
+        font-size: 2rem;
+    }
+
+    nav img {
+        height: 2rem;
+    }
+
     .about address, .about a {
         font-size: 2rem;
     }
