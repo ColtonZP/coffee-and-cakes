@@ -15,7 +15,7 @@ a {
 }
 
 nav a{
-    font-size: 2rem;
+    font-size: 1.2rem;
     text-decoration: none;
     position: relative;
 }
@@ -28,6 +28,10 @@ nav .right a {
     margin-left: 20px;
 }
 
+nav img {
+    height: 1.2rem;
+}
+
 body {
     background-color: #70ecb4;
 }
@@ -37,7 +41,7 @@ body {
     position: relative;
     background: #70ecb4 url("imgs/coffeeshop.jpeg") no-repeat center/cover;
     border-radius: 10px;
-    height: 10vh;
+    height: 5rem;
     box-shadow: 0 0 10px 0 #000;
 }
 
@@ -110,7 +114,7 @@ button {
 
 a .badge {
     width: 14px;
-    right: -5px;
+    right: -10px;
     font-size: 12px;
     padding: 0;
     border-radius: 50px;
@@ -155,7 +159,7 @@ footer p {
     }
 
     .about {
-        height: 20vh;
+        height: 10rem;
     }
 
     li {
@@ -180,6 +184,10 @@ footer p {
 
     .specials {
         width: 24%;
+    }
+
+    a .badge {
+        right: -5px;
     }
 }
 
