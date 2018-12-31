@@ -61,6 +61,9 @@ li {
     list-style: none;
     border-radius: 10px;
     margin-bottom: 2%;
+}
+
+li:hover {
     box-shadow: 0 0 10px 0 #000;
 }
 
