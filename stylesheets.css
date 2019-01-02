@@ -117,7 +117,6 @@ button {
 
 a .badge {
     right: -10px;
-    bottom: .3rem;
     font-size: .5rem;
     padding: 2px;
     border-radius: 50px;
@@ -199,6 +198,7 @@ footer p {
 
     a .badge {
         right: -8px;
+        bottom: .25rem;
     }
 }
 
