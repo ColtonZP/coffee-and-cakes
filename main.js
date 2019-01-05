@@ -21,6 +21,9 @@ if (coffees !== null) {
       if (!bag) {
         bag = [];
       }
+      if (target.parentElement.className === 'add') {
+        target = target.parentElement;
+      }
       bagCount++;
       bag.push({'img': target.parentElement.querySelector('img').src, 'name' : target.parentElement.querySelector('.name').innerHTML, 'price' : Number(target.parentElement.querySelector('.price').innerHTML.substring(7, 11))});
       localStorage.setItem('items', JSON.stringify(bag));

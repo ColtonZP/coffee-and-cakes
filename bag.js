@@ -1,7 +1,9 @@
 const page = document.querySelector('.order');
+const orderPage = document.querySelector('.orderPage');
 const amount = document.querySelector('.amount');
 const tax = document.querySelector('.tax');
 const total = document.querySelector('.total');
+const removeAll = document.querySelector('.removeAll');
 
 let coffee;
 let orderItems;
@@ -41,19 +43,26 @@ function showBag() {
 function removeItem(index) {
   bag.splice(index, 1);
   localStorage.setItem('items', JSON.stringify(bag));
-  bagCount--;
   bagCountDOM.innerHTML = bagCount;
+  if (bagCount > 0) {
+    bagCount--;
+  }
   localStorage.setItem('itemCount', bagCount);
   addedPrice = 0;
   showBag();
 }
 
-page.addEventListener('click', (event) => {
+orderPage.addEventListener('click', (event) => {
+  console.log(orderItems);
   if (event.target.className === 'remove' || event.target.parentElement.className === 'remove') {
     for (let i = 0; i < orderItems.length; i++) {
       if (event.target.parentElement.parentElement == orderItems[i]) {
         removeItem(i);
       }
+    }
+  } else if (event.target.className === 'removeAll') {
+    for (let i = orderItems.length; i >= 0; i--) {
+      removeItem(i);
     }
   }
 });
