@@ -25,11 +25,11 @@ nav .right {
 }
 
 nav .right a {
-    margin: 0 8px 0 20px;
+    margin-right: 50px;
 }
 
-nav img {
-    height: .8rem;
+nav .right a:last-child {
+    margin-right: 8px;
 }
 
 body {
@@ -98,9 +98,9 @@ ul {
     text-align: center;
 }
 
-/* button {
+button {
     cursor: pointer;
-} */
+}
 
 .badge {
     position: absolute;
@@ -112,7 +112,6 @@ ul {
 }
 
 a .badge {
-    display: none;
     right: -10px;
     font-size: .5rem;
     padding: 2px;
@@ -165,17 +164,23 @@ h3 {
     background-color: #f96161;
 }
 
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
 @media screen and (min-width: 768px) {
     nav a {
         font-size: 2rem;
     }
 
-    nav img {
-        height: 2rem;
-    }
-
     .about address, .about a {
         font-size: 2rem;
+    }
+
+    nav img {
+        height: 2rem;
     }
 
     .container {
@@ -191,9 +196,9 @@ h3 {
         width: 32.3%;
     }
 
-    li:hover {
+    /* li:hover {
         box-shadow: 0 0 10px 0 #000;
-    }
+    } */
     
     .ourStore::after {
         content: "";
@@ -216,7 +221,6 @@ h3 {
     }
 
     a .badge {
-        display: block;
         right: -10px;
         bottom: .25rem;
         font-size: .8rem;
@@ -234,12 +238,6 @@ h3 {
         margin-top: 59.44px;
         float: right;
         width: 32.3%;
-    }
-
-    .clearfix::after {
-        content: "";
-        clear: both;
-        display: table;
     }
 }
 
