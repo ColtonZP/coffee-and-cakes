@@ -1,8 +1,8 @@
 const coffees = document.querySelector('.coffees');
 const bagCountDOM = document.querySelector('#bagCount');
 
-let bag = [];
-let bagCount = localStorage.getItem("itemCount");
+let bag = JSON.parse(localStorage.getItem('items'));
+let bagCount = localStorage.getItem('itemCount');
 
 function updateBag() {
   if (!bagCount) {
@@ -14,12 +14,17 @@ function updateBag() {
 
 updateBag();
 
-coffees.addEventListener('click', (event) => {
-  console.log(event.target.parent);
-  if (event.target.className === 'add' || event.target.parentElement.className === 'add') {
-    bagCount++;
-    bag.push("coffee" + bagCount);
-    localStorage.setItem("items", bag);
-    updateBag();
-  }
-});
+if (coffees !== null) {
+  coffees.addEventListener('click', (event) => {
+    let target = event.target;
+    if (target.className === 'add' || target.parentElement.className === 'add') {
+      if (!bag) {
+        bag = [];
+      }
+      bagCount++;
+      bag.push({'img': target.parentElement.querySelector('img').src, 'name' : target.parentElement.querySelector('.name').innerHTML, 'price' : Number(target.parentElement.querySelector('.price').innerHTML.substring(7, 11))});
+      localStorage.setItem('items', JSON.stringify(bag));
+      updateBag();
+    }
+  });
+}
