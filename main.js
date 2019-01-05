@@ -14,20 +14,18 @@ function updateBag() {
 
 updateBag();
 
-if (coffees !== null) {
-  coffees.addEventListener('click', (event) => {
-    let target = event.target;
-    if (target.className === 'add' || target.parentElement.className === 'add') {
-      if (!bag) {
-        bag = [];
-      }
-      if (target.parentElement.className === 'add') {
-        target = target.parentElement;
-      }
-      bagCount++;
-      bag.push({'img': target.parentElement.querySelector('img').src, 'name' : target.parentElement.querySelector('.name').innerHTML, 'price' : Number(target.parentElement.querySelector('.price').innerHTML.substring(7, 11))});
-      localStorage.setItem('items', JSON.stringify(bag));
-      updateBag();
+coffees.addEventListener('click', (event) => {
+  let target = event.target;
+  if (target.className === 'add' || target.parentElement.className === 'add') {
+    if (!bag) {
+      bag = [];
     }
-  });
-}
+    if (target.parentElement.className === 'add') {
+      target = target.parentElement;
+    }
+    bagCount++;
+    bag.push({'img': target.parentElement.querySelector('img').src, 'name' : target.parentElement.querySelector('.name').innerHTML, 'price' : Number(target.parentElement.querySelector('.price').innerHTML.substring(7, 11))});
+    localStorage.setItem('items', JSON.stringify(bag));
+    updateBag();
+  }
+});
