@@ -1,4 +1,4 @@
-const coffees = document.querySelector('.coffees');
+const menu = document.querySelector('.menu');
 const bagCountDOM = document.querySelector('#bagCount');
 
 let bag = JSON.parse(localStorage.getItem('items'));
@@ -14,7 +14,7 @@ function updateBag() {
 
 updateBag();
 
-coffees.addEventListener('click', (event) => {
+menu.addEventListener('click', (event) => {
   let target = event.target;
   if (target.className === 'add' || target.parentElement.className === 'add') {
     if (!bag) {
