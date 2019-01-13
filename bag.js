@@ -8,6 +8,7 @@ const cvv = document.querySelector('.cvv');
 const cardType = document.querySelector('#cardType');
 const cardValue = completeOrderWindow.querySelector('.card');
 const name = completeOrderWindow.querySelector('.name');
+const close = document.querySelector('#close');
 
 let coffee;
 let orderItems;
@@ -42,7 +43,7 @@ function showBag() {
   } else {
     order = '<ul class="coffees orders">'
     for (let i = 0; i < bag.length; i++) {
-      order += '<li><div class="coffee"><img class="coffeeImg" src="' + bag[i].img + '"><h3 class="name">' + bag[i].name + '</h3><p>' + bag[i].price +'</p><button class="remove">Remove Item</button></div></li>';
+      order += '<li class="orderItem"><div class="coffee"><img class="coffeeImg" src="' + bag[i].img + '"><h3 class="name">' + bag[i].name + '</h3><p>' + bag[i].price +'</p><button class="remove"><img src="imgs/remove.svg" alt="">Remove Item</button></div></li>';
       addPrice(bag[i].price);
     }
     order += '</ul>'
@@ -117,7 +118,8 @@ function checkName() {
 }
 
 orderPage.parentNode.addEventListener('click', (event) => {
-  if (event.target.className === 'remove' || event.target.parentElement.className === 'remove') {
+  console.log(event.target.parentElement.className);
+  if (event.target.className === 'remove') {
     for (let i = 0; i < orderItems.length; i++) {
       if (event.target.parentElement.parentElement == orderItems[i]) {
         removeItem(i);
@@ -137,6 +139,8 @@ orderPage.parentNode.addEventListener('click', (event) => {
   } else if (event.target.className ==='done') {
     completeOrderWindow.className = 'nodisplay';
     localStorage.clear();
+    location.reload();
+  } else if (event.target == close) {
     location.reload();
   }
 });

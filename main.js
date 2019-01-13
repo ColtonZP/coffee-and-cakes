@@ -29,3 +29,7 @@ menu.addEventListener('click', (event) => {
     updateBag();
   }
 });
+
+function toggleMenu() {
+  document.querySelector('.menuItems').classList.toggle('menuItemsShow');
+}
