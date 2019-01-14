@@ -24,7 +24,11 @@ menu.addEventListener('click', (event) => {
       target = target.parentElement;
     }
     bagCount++;
-    bag.push({'img': target.parentElement.querySelector('img').src, 'name' : target.parentElement.querySelector('.name').innerHTML, 'price' : Number(target.parentElement.querySelector('.price').innerHTML.substring(7, 11))});
+    bag.push({
+      'img': target.parentElement.querySelector('img').src,
+      'name': target.parentElement.querySelector('.name').innerHTML,
+      'price': Number(target.parentElement.querySelector('.price').innerHTML.substring(7, 11))
+    });
     localStorage.setItem('items', JSON.stringify(bag));
     updateBag();
   }

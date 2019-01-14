@@ -19,11 +19,22 @@ bagCountHTML = document.querySelector('#bagCount');
 bag = JSON.parse(localStorage.getItem('items'));
 bagCount = localStorage.getItem('itemCount');
 
-const cards = [
-  {type : 'visa',  number : /^(?:4[0-9]{12}(?:[0-9]{3})?)$/},
-  {type : 'master', number : /^(?:5[1-5][0-9]{14})$/,},
-  {type : 'amex', number : /^(?:3[47][0-9]{13})$/,},
-  {type : 'discover', number : /^(?:6(?:011|5[0-9][0-9])[0-9]{12})$/}
+const cards = [{
+    type: 'visa',
+    number: /^(?:4[0-9]{12}(?:[0-9]{3})?)$/
+  },
+  {
+    type: 'master',
+    number: /^(?:5[1-5][0-9]{14})$/,
+  },
+  {
+    type: 'amex',
+    number: /^(?:3[47][0-9]{13})$/,
+  },
+  {
+    type: 'discover',
+    number: /^(?:6(?:011|5[0-9][0-9])[0-9]{12})$/
+  }
 ]
 
 showBag();
@@ -43,7 +54,7 @@ function showBag() {
   } else {
     order = '<ul class="coffees orders">'
     for (let i = 0; i < bag.length; i++) {
-      order += '<li class="orderItem"><div class="coffee"><img class="coffeeImg" src="' + bag[i].img + '"><h3 class="name">' + bag[i].name + '</h3><p>' + bag[i].price +'</p><button class="remove"><img src="imgs/remove.svg" alt="">Remove Item</button></div></li>';
+      order += '<li class="orderItem"><div class="coffee"><img class="coffeeImg" src="' + bag[i].img + '"><h3 class="name">' + bag[i].name + '</h3><p>' + bag[i].price + '</p><button class="remove"><img src="imgs/remove.svg" alt="">Remove Item</button></div></li>';
       addPrice(bag[i].price);
     }
     order += '</ul>'
@@ -73,11 +84,11 @@ function checkCard(cardInput) {
   let valid = false
   let type;
   for (i = 0; i < cards.length; i++) {
-    if(cards[i].number.test(cardInput.value) === true) {
-        type = cards[i].type;
-        valid = true;
-        break;
-      } 
+    if (cards[i].number.test(cardInput.value) === true) {
+      type = cards[i].type;
+      valid = true;
+      break;
+    }
   }
   if (valid === true) {
     cardInput.style.borderColor = '#a8c5c1';
@@ -93,11 +104,11 @@ function checkCard(cardInput) {
 function checkCVV(type) {
   console.log(type);
   valid = false;
-  if(type === 'amex' && cvv.value.length === 4) {
+  if (type === 'amex' && cvv.value.length === 4) {
     cvv.style.borderColor = '#a8c5c1';
     valid = true;
     return valid;
-  } else if(type !== 'amex' && cvv.value.length === 3 && type !== false) {
+  } else if (type !== 'amex' && cvv.value.length === 3 && type !== false) {
     cvv.style.borderColor = '#a8c5c1';
     valid = true;
     return valid;
@@ -133,10 +144,10 @@ orderPage.parentNode.addEventListener('click', (event) => {
     completeOrderWindow.className = '';
     window.addEventListener('scroll', stopScroll);
   } else if (event.target.className === 'completeEntireOrder') {
-    if(checkCard(cardValue) && checkCVV(checkCard(cardValue)) && checkName()){
+    if (checkCard(cardValue) && checkCVV(checkCard(cardValue)) && checkName()) {
       completeOrderWindow.querySelector('.checkout').innerHTML = '<h3>Your order will be available for pick up in 15 minutes</h3><button class="done">Done</button>';
     }
-  } else if (event.target.className ==='done') {
+  } else if (event.target.className === 'done') {
     completeOrderWindow.className = 'nodisplay';
     localStorage.clear();
     location.reload();
