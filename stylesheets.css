@@ -2,7 +2,8 @@
     font-family: 'Roboto', sans-serif;
 }
 
-html, body {
+html,
+body {
     margin: 0;
 }
 
@@ -14,7 +15,7 @@ a {
     color: #000;
 }
 
-nav a{
+nav a {
     font-size: 1.2em;
     text-decoration: none;
     position: relative;
@@ -47,7 +48,7 @@ nav .right a:last-child {
     transition: max-height .5s;
 }
 
-.menuItems a{
+.menuItems a {
     text-decoration: none;
     margin-left: 50px;
     font-size: 1.2em;
@@ -88,7 +89,8 @@ li {
     margin: 0;
 }
 
-.coffeeImg, .cakeImg {
+.coffeeImg,
+.cakeImg {
     width: 100%;
     height: auto;
     border-radius: 10px 10px 0 0;
@@ -102,13 +104,17 @@ ul {
     justify-content: space-between;
 }
 
-.coffee, .cake, .specials {
+.coffee,
+.cake,
+.specials {
     position: relative;
     background: #FFF;
     border-radius: 10px;
 }
 
-.coffee button, .checkout button, .cake Button {
+.coffee button,
+.checkout button,
+.cake button {
     font-size: 1.2em;
     width: 100%;
     background-color: #a8c5c1;
@@ -117,13 +123,29 @@ ul {
     cursor: pointer;
 }
 
+.locations {
+    width: 100%;
+}
+
+.locations button {
+    box-sizing: border-box;
+    border: none;
+    width: 100%;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 1em 0;
+}
+
 #close {
     border-radius: 10px;
     background-color: #f96161;
     width: auto;
 }
 
-.coffee p, .cake p {
+.coffee p,
+.cake p {
     padding-left: 10px;
 }
 
@@ -135,7 +157,7 @@ ul {
     position: absolute;
     right: 0;
     font-size: 1em;
-    background-color:#eec674;
+    background-color: #eec674;
     padding: 0 10px;
     border-radius: 10px;
 }
@@ -149,10 +171,12 @@ a .badge {
     text-align: center;
 }
 
-.ourStore img {
+#map {
     width: 100%;
+    height: 600px;
     border-radius: 10px;
     box-shadow: 0 0 10px 0 #000;
+    margin-bottom: 10px;
 }
 
 .container {
@@ -180,7 +204,7 @@ h3 {
 }
 
 .order li {
-    width: 100%;   
+    width: 100%;
 }
 
 .checkout {
@@ -264,7 +288,8 @@ h3 {
     z-index: 3;
 }
 
-.remove img, .add img{
+.remove img,
+.add img {
     pointer-events: none;
     margin-right: 5px;
     height: .7em;
@@ -279,7 +304,8 @@ h3 {
         font-size: 2em;
     }
 
-    .about address, .about a {
+    .about address,
+    .about a {
         font-size: 2em;
     }
 
@@ -300,17 +326,17 @@ h3 {
         width: 32.3%;
     }
 
-    .coffee:hover, .cake:hover {
+    .coffee:hover,
+    .cake:hover {
         box-shadow: 0 0 10px 0 #000;
     }
 
-    .ourStore img {
-        width: 40%;
+    #map {
+        width: 60%;
         float: right;
-        margin-left: 10px; 
     }
 
-    .ourStore p {
+    .ourStores p {
         margin: 0 0 10px;
     }
 
@@ -345,6 +371,18 @@ h3 {
 
     .close:hover {
         content: "X close";
+    }
+
+    .locations {
+        width: 40%;
+    }
+
+    .locations button {
+        width: 45%
+    }
+
+    .locations button:nth-child(odd) {
+        margin-right: 5%;
     }
 }
 

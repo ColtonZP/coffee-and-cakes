@@ -1,92 +1,104 @@
 <!doctype html>
 
 <html>
-	<head>
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link href="https://fonts.googleapis.com/css?family=Roboto:500" rel="stylesheet">
-		<link rel="stylesheet" href="stylesheets.css">
-		<title>Coffee & Cakes</title>
-		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-131932568-2"></script>
-		<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date()); gtag('config', 'UA-131932568-2');</script>
-	</head>
-	<body>
-		<header>
-			<nav class="container">
-				<a href="index.html">Home</a>
-				<div class="right">
-					<a href="javascript:toggleMenu();">Menu</a>
-					<a id="bagCheckout" href="bag.html"><span id="bagCount" class="badge"></span><img src="imgs/bag.svg" alt="Bag Image" class="bagImg"></a>
-				</div>
-			</nav>
-			<div class="container menuItems clearfix">
-				<a href="coffee.html">Coffee</a>
-				<a href="cake.html">Cakes</a>
-			</div>
-		</header>
 
-		<main class="container">
-			<div class="about" style="height: 20rem;">
-				<div>
-					<address>
-							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-								<path d="M12 0c-4.198 0-8 3.403-8 7.602 0 4.198 3.469 9.21 8 16.398 4.531-7.188 8-12.2 8-16.398 0-4.199-3.801-7.602-8-7.602zm0 11c-1.657 0-3-1.343-3-3s1.343-3 3-3 3 1.343 3 3-1.343 3-3 3z" style="fill:#fff"/>
-							</svg>
-						1st S Main St. <br>
-						Seattle, Wa 98101
-					</address>
-					<a href="tel:+1-555-555-1212">555-555-1212</a>
-				</div>
-			</div>
-			<h1>Our Store</h1>
-			<div class="ourStore clearfix">
-				<img src="imgs/lobby.jpeg" alt="Picture of lobby">
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse feugiat ullamcorper accumsan. Sed orci nunc, euismod eu massa vel, luctus interdum erat. Fusce faucibus egestas ligula vitae ultrices. Phasellus leo est, dignissim aliquam tellus vel, auctor imperdiet risus. Duis mollis erat non felis pretium finibus. Donec elit justo, feugiat eu semper a, porta sed enim. Vestibulum velit magna, feugiat at magna id, vehicula mattis nibh. Aenean et auctor sapien. In hac habitasse platea dictumst. Aenean accumsan non arcu quis placerat.</p>
-				<h1>Hours</h1>
-				<p>Monday-Friday: 6am - 7pm</p>
-				<p>Satuday: 6am - 9pm</p>
-				<p>Sunday: 9am - 6pm</p>
-				<br>
-				<p>Closed: Thanksgiving & Christmas Day</p>
-				<p>Other Holidays: 9am - 4pm</p>
-			</div>
-			<h1>Specials</h1>
-			<div>
-				<ul>
-					<li class="specials">
-						<div class="special">
-								<img src="imgs/happyhour.jpeg" alt="Coffee Image" class="coffeeImg">
-							<p>Happy Hour: 3pm-4pm everyday*</p>
-						</div>
-					</li>
-					<li class="specials">
-						<div class="special">
-							<img src="imgs/birthday.jpeg" alt="Coffee Image" class="coffeeImg">
-							<p>Free Birthday drink & cake**</p>
-						</div>
-					</li>
-					<li class="specials">
-						<div class="special">
-								<img src="imgs/stamp.jpeg" alt="Coffee Image" class="coffeeImg">
-							<p>Double stamp Tuesdays & Thursdays</p>
-						</div>
-					</li>
-					<li class="specials">
-						<div class="special">
-								<img src="imgs/coffeecake.jpeg" alt="Coffee Image" class="coffeeImg">
-							<p>Buy a coffee get, get a cake 20% off</p>
-						</div>
-					</li>
-				</ul>
-			</div>
-			<small>*$1.50 off all drinks</small> <br>
-			<small>**please provide ID at store</small>
-		</main>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link href="https://fonts.googleapis.com/css?family=Roboto:500" rel="stylesheet">
+	<link rel="stylesheet" href="stylesheets.css">
+	<title>Coffee & Cakes</title>
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-131932568-2"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
 
-		<footer>
-			<div class="container">
-				<p>A site made by Colton Pemberton, all images used fairly from <a href="https://www.pexels.com/royalty-free-images/">pexels.com</a>. This site does not represent any real business.</p>
+		function gtag() {
+			dataLayer.push(arguments);
+		}
+		gtag('js', new Date());
+		gtag('config', 'UA-131932568-2');
+	</script>
+</head>
+
+<body>
+	<header>
+		<nav class="container">
+			<a href="index.html">Home</a>
+			<div class="right">
+				<a href="javascript:toggleMenu();">Menu</a>
+				<a id="bagCheckout" href="bag.html">
+					<span id="bagCount" class="badge"></span>
+					<img src="imgs/bag.svg" alt="Bag Image" class="bagImg">
+				</a>
 			</div>
-		</footer>
-		<script src="main.js"></script>
-	</body>
+		</nav>
+		<div class="container menuItems clearfix">
+			<a href="coffee.html">Coffee</a>
+			<a href="cake.html">Cakes</a>
+		</div>
+	</header>
+
+	<main class="container">
+		<div class="about" style="height: 20rem;">
+		</div>
+		<h1>Locations</h1>
+		<div class="ourStores clearfix">
+			<div id="map">
+				<script src="maps.js"></script>
+				<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7R4F6spaX7V5U0FuNRBsrE0WLg_8Mnlg&callback=initMap"></script>
+			</div>
+			<div class="locations">
+				<button class="location1">Capital Hill</button>
+				<button class="location2">Pike Place</button>
+				<button class="location3">Magnolia</button>
+				<button class="location4">North Admiral</button>
+			</div>
+			<h1>Hours</h1>
+			<p>Monday-Friday: 6am - 7pm</p>
+			<p>Satuday: 6am - 9pm</p>
+			<p>Sunday: 9am - 6pm</p>
+			<br>
+			<p>Closed: Thanksgiving & Christmas Day</p>
+			<p>Other Holidays: 9am - 4pm</p>
+		</div>
+		<h1>Specials</h1>
+		<div>
+			<ul>
+				<li class="specials">
+					<div class="special">
+						<img src="imgs/happyhour.jpeg" alt="Coffee Image" class="coffeeImg">
+						<p>Happy Hour: 3pm-4pm everyday*</p>
+					</div>
+				</li>
+				<li class="specials">
+					<div class="special">
+						<img src="imgs/birthday.jpeg" alt="Coffee Image" class="coffeeImg">
+						<p>Free Birthday drink & cake**</p>
+					</div>
+				</li>
+				<li class="specials">
+					<div class="special">
+						<img src="imgs/stamp.jpeg" alt="Coffee Image" class="coffeeImg">
+						<p>Double stamp Tuesdays & Thursdays</p>
+					</div>
+				</li>
+				<li class="specials">
+					<div class="special">
+						<img src="imgs/coffeecake.jpeg" alt="Coffee Image" class="coffeeImg">
+						<p>Buy a coffee get, get a cake 20% off</p>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<small>*$1.50 off all drinks</small> <br>
+		<small>**please provide ID at store</small>
+	</main>
+
+	<footer>
+		<div class="container">
+			<p>A site made by Colton Pemberton, all images used fairly from <a href="https://www.pexels.com/royalty-free-images/">pexels.com</a>.
+				This site does not represent any real business.</p>
+		</div>
+	</footer>
+	<script src="main.js"></script>
+</body>
 <html>
