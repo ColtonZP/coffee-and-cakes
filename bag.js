@@ -10,18 +10,17 @@ const cardValue = completeOrderWindow.querySelector('.card');
 const name = completeOrderWindow.querySelector('.name');
 const close = document.querySelector('#close');
 
-let coffee;
 let orderItems;
 let order;
 let addedPrice = 0;
 
-bagCountHTML = document.querySelector('#bagCount');
 bag = JSON.parse(localStorage.getItem('items'));
 bagCount = localStorage.getItem('itemCount');
 
-const cards = [{
+const cards = [
+  {
     type: 'visa',
-    number: /^(?:4[0-9]{12}(?:[0-9]{3})?)$/
+    number: /^(?:4[0-9]{12}(?:[0-9]{3})?)$/,
   },
   {
     type: 'master',
@@ -33,31 +32,32 @@ const cards = [{
   },
   {
     type: 'discover',
-    number: /^(?:6(?:011|5[0-9][0-9])[0-9]{12})$/
-  }
-]
+    number: /^(?:6(?:011|5[0-9][0-9])[0-9]{12})$/,
+  },
+];
 
 showBag();
 
 function addPrice(price) {
   addedPrice += price;
-  amount.innerHTML = 'Amount: ' + addedPrice.toFixed(2);
-  tax.innerHTML = 'Tax: ' + (addedPrice * .09).toFixed(2);
-  total.innerHTML = 'Total: ' + (addedPrice * .09 + addedPrice).toFixed(2);
+  amount.innerHTML = `Amount: ${addedPrice.toFixed(2)}`;
+  tax.innerHTML = `Tax: ${(addedPrice * 0.09).toFixed(2)}`;
+  total.innerHTML = `Total: ${(addedPrice * 0.09 + addedPrice).toFixed(2)}`;
   completeOrderWindow.querySelector('.total').innerHTML = total.innerHTML;
 }
 
 function showBag() {
   if (bag === null || bag.length === 0) {
-    order = '<h1>Empty</h1>'
+    order = '<h1>Empty</h1>';
     addPrice(0);
   } else {
-    order = '<ul class="coffees orders">'
+    order = '<ul class="coffees orders">';
     for (let i = 0; i < bag.length; i++) {
-      order += '<li class="orderItem"><div class="coffee"><img class="coffeeImg" src="' + bag[i].img + '"><h3 class="name">' + bag[i].name + '</h3><p>' + bag[i].price + '</p><button class="remove"><img src="imgs/remove.svg" alt="">Remove Item</button></div></li>';
+      order
+        += `<li class="orderItem"><div class="coffee"><img class="coffeeImg" src="${bag[i].img}"><h3 class="name">${bag[i].name}</h3><p>${bag[i].price}</p><button class="remove"><img src="imgs/remove.svg" alt="">Remove Item</button></div></li>`;
       addPrice(bag[i].price);
     }
-    order += '</ul>'
+    order += '</ul>';
   }
   page.innerHTML = order;
   coffee = document.querySelector('.coffees');
@@ -81,7 +81,7 @@ function stopScroll() {
 }
 
 function checkCard(cardInput) {
-  let valid = false
+  let valid = false;
   let type;
   for (i = 0; i < cards.length; i++) {
     if (cards[i].number.test(cardInput.value) === true) {
@@ -95,10 +95,9 @@ function checkCard(cardInput) {
     cardType.innerHTML = type;
     cardType.className = 'cardType';
     return type;
-  } else {
-    cardInput.style.borderColor = '#f96161';
-    return false;
   }
+  cardInput.style.borderColor = '#f96161';
+  return false;
 }
 
 function checkCVV(type) {
@@ -108,31 +107,29 @@ function checkCVV(type) {
     cvv.style.borderColor = '#a8c5c1';
     valid = true;
     return valid;
-  } else if (type !== 'amex' && cvv.value.length === 3 && type !== false) {
+  } if (type !== 'amex' && cvv.value.length === 3 && type !== false) {
     cvv.style.borderColor = '#a8c5c1';
     valid = true;
     return valid;
-  } else {
-    cvv.style.borderColor = '#f96161';
-    return valid;
   }
+  cvv.style.borderColor = '#f96161';
+  return valid;
 }
 
 function checkName() {
   if (name.value !== '') {
     name.style.borderColor = '#a8c5c1';
     return true;
-  } else {
-    name.style.borderColor = '#f96161';
-    return false;
   }
+  name.style.borderColor = '#f96161';
+  return false;
 }
 
 orderPage.parentNode.addEventListener('click', (event) => {
   console.log(event.target.parentElement.className);
   if (event.target.className === 'remove') {
     for (let i = 0; i < orderItems.length; i++) {
-      if (event.target.parentElement.parentElement == orderItems[i]) {
+      if (event.target.parentElement.parentElement === orderItems[i]) {
         removeItem(i);
       }
     }
@@ -151,16 +148,16 @@ orderPage.parentNode.addEventListener('click', (event) => {
     completeOrderWindow.className = 'nodisplay';
     localStorage.clear();
     location.reload();
-  } else if (event.target == close) {
+  } else if (event.target === close) {
     location.reload();
   }
 });
 
-cardValue.addEventListener('input', (event) => {
+cardValue.addEventListener('input', () => {
   checkCard(cardValue);
 });
 
-cvv.addEventListener('input', (event) => {
+cvv.addEventListener('input', () => {
   console.log(checkCVV(checkCard(cardValue)));
   checkCVV(checkCard(cardValue));
 });

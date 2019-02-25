@@ -9,30 +9,32 @@ function updateBag() {
     bagCount = 0;
   }
   bagCountDOM.innerHTML = bagCount;
-  localStorage.setItem("itemCount", bagCount);
+  localStorage.setItem('itemCount', bagCount);
 }
 
 updateBag();
 
-menu.addEventListener('click', (event) => {
-  let target = event.target;
-  if (target.className === 'add' || target.parentElement.className === 'add') {
-    if (!bag) {
-      bag = [];
+if (menu !== null) {
+  menu.addEventListener('click', (event) => {
+    let { target } = event;
+    if (target.className === 'add' || target.parentElement.className === 'add') {
+      if (!bag) {
+        bag = [];
+      }
+      if (target.parentElement.className === 'add') {
+        target = target.parentElement;
+      }
+      bagCount++;
+      bag.push({
+        img: target.parentElement.querySelector('img').src,
+        name: target.parentElement.querySelector('.name').innerHTML,
+        price: Number(target.parentElement.querySelector('.price').innerHTML.substring(7, 11)),
+      });
+      localStorage.setItem('items', JSON.stringify(bag));
+      updateBag();
     }
-    if (target.parentElement.className === 'add') {
-      target = target.parentElement;
-    }
-    bagCount++;
-    bag.push({
-      'img': target.parentElement.querySelector('img').src,
-      'name': target.parentElement.querySelector('.name').innerHTML,
-      'price': Number(target.parentElement.querySelector('.price').innerHTML.substring(7, 11))
-    });
-    localStorage.setItem('items', JSON.stringify(bag));
-    updateBag();
-  }
-});
+  });
+}
 
 function toggleMenu() {
   document.querySelector('.menuItems').classList.toggle('menuItemsShow');
