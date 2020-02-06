@@ -1,399 +1,396 @@
 * {
-    font-family: 'Roboto', sans-serif;
+	font-family: 'Roboto', sans-serif;
 }
 
 html,
 body {
-    margin: 0;
+	margin: 0;
 }
 
 header {
-    background-color: #fff;
-    box-shadow: 0 0 10px 0 #000;
+	background-color: #70ecb4;
+	box-shadow: 0 0 10px 0 #000;
 }
 
 a {
-    color: #000;
+	color: #000;
 }
 
 nav a {
-    font-size: 1.2em;
-    text-decoration: none;
-    position: relative;
+	font-size: 1.2em;
+	text-decoration: none;
+	position: relative;
 }
 
 nav .right {
-    float: right;
+	float: right;
 }
 
 nav .right a {
-    margin-right: 50px;
+	margin-right: 50px;
 }
 
 nav .right a:last-child {
-    margin-right: 8px;
+	margin-right: 8px;
 }
 
 .menuItems {
-    text-align: right;
-    background: #fff;
-    top: 2em;
-    z-index: 2;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height .5s;
+	text-align: right;
+	background: #70ecb4;
+	top: 2em;
+	z-index: 2;
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height 0.5s;
 }
 
 .menuItemsShow {
-    max-height: 2.1em;
-    transition: max-height .5s;
+	max-height: 2.1em;
+	transition: max-height 0.5s;
 }
 
 .menuItems a {
-    text-decoration: none;
-    margin-left: 50px;
-    font-size: 1.2em;
-    display: inline;
+	text-decoration: none;
+	margin-left: 50px;
+	font-size: 1.2em;
+	display: inline;
 }
 
 body {
-    background-color: #70ecb4;
+	background-color: #f6f6f6;
 }
 
 .about {
-    margin-top: 2%;
-    position: relative;
-    background: #70ecb4 url("imgs/coffeeshop.jpeg") no-repeat center/cover;
-    border-radius: 10px;
-    height: 5em;
-    box-shadow: 0 0 10px 0 #000;
+	margin-top: 2%;
+	position: relative;
+	background: #70ecb4 url('imgs/coffeeshop.jpeg') no-repeat center/cover;
+	border-radius: 10px;
+	height: 5em;
+	box-shadow: 10px 10px 10px #dedede, -10px -10px 10px #fff;
 }
 
 .about div {
-    margin: 0 0 10px 10px;
-    color: #fff;
-    position: absolute;
-    bottom: 0;
+	margin: 0 0 10px 10px;
+	color: #fff;
+	position: absolute;
+	bottom: 0;
 }
 
 .about a {
-    color: #FFF;
+	color: #fff;
 }
 
 li {
-    list-style: none;
-    border-radius: 10px;
-    margin-bottom: 2%;
+	list-style: none;
+	border-radius: 10px;
+	margin-bottom: 2%;
 }
 
 .orderItem p {
-    margin: 0;
+	margin: 0;
 }
 
 .coffeeImg,
 .cakeImg {
-    width: 100%;
-    height: auto;
-    border-radius: 10px 10px 0 0;
+	width: 100%;
+	height: auto;
+	border-radius: 10px 10px 0 0;
 }
 
 ul {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
 }
 
 .coffee,
 .cake,
 .specials {
-    position: relative;
-    background: #FFF;
-    border-radius: 10px;
+	position: relative;
+	background: #f6f6f6;
+	border-radius: 10px;
+	box-shadow: 10px 10px 10px #dedede, -10px -10px 10px #fff;
+	/* border: #000 1px solid; */
 }
 
 .coffee button,
 .checkout button,
 .cake button {
-    font-size: 1.2em;
-    width: 100%;
-    background-color: #a8c5c1;
-    border-style: none;
-    border-radius: 0 0 10px 10px;
-    cursor: pointer;
+	font-size: 1.2em;
+	width: 100%;
+	background-color: #a8c5c1;
+	border-style: none;
+	border-radius: 0 0 10px 10px;
+	cursor: pointer;
 }
 
 .locations {
-    width: 100%;
+	width: 100%;
 }
 
 .locations button {
-    box-sizing: border-box;
-    border: none;
-    background-color: #fff;
-    width: 100%;
-    margin-bottom: 10px;
-    font-size: 1.2em;
-    border-radius: 10px;
-    cursor: pointer;
-    padding: 1em 0;
+	box-sizing: border-box;
+	border: none;
+	background-color: #fff;
+	width: 100%;
+	margin-bottom: 10px;
+	font-size: 1.2em;
+	border-radius: 10px;
+	cursor: pointer;
+	padding: 1em 0;
 }
 
 #close {
-    border-radius: 10px;
-    background-color: #f96161;
-    width: auto;
+	border-radius: 10px;
+	background-color: #f96161;
+	width: auto;
 }
 
 .coffee p,
 .cake p {
-    padding-left: 10px;
+	padding-left: 10px;
 }
 
 .special p {
-    text-align: center;
+	text-align: center;
 }
 
 .badge {
-    position: absolute;
-    right: 0;
-    font-size: 1em;
-    background-color: #a8c5c1;
-    padding: 0 10px;
-    border-radius: 10px;
+	position: absolute;
+	right: 0;
+	font-size: 1em;
+	background-color: #fff;
+	padding: 0 10px;
+	border-radius: 10px;
 }
 
 a .badge {
-    right: -10px;
-    font-size: .5em;
-    padding: 2px;
-    border-radius: 50px;
-    border: 3px solid #fff;
-    text-align: center;
+	right: -10px;
+	font-size: 0.5em;
+	padding: 2px;
+	border-radius: 50px;
+	border: 3px solid #70ecb4;
+	text-align: center;
 }
 
 #map {
-    width: 100%;
-    height: 600px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px 0 #000;
-    margin-bottom: 10px;
+	width: 100%;
+	height: 600px;
+	border-radius: 10px;
+	box-shadow: 10px 10px 10px #dedede, -10px -10px 10px #fff;
+	margin-bottom: 10px;
 }
 
 .container {
-    width: 90%;
-    margin: auto;
+	width: 90%;
+	margin: auto;
 }
 
 .specials {
-    width: 100%;
+	width: 100%;
 }
 
 footer {
-    background-color: #fff;
-    margin: 0;
-    text-align: center;
+	background-color: #fff;
+	margin: 0;
+	text-align: center;
 }
 
 footer p {
-    margin-bottom: 0;
-    padding: 10px;
+	margin-bottom: 0;
+	padding: 10px;
 }
 
 h3 {
-    padding: 0 0 0 10px;
+	padding: 0 0 0 10px;
 }
 
 .order li {
-    width: 100%;
+	width: 100%;
 }
 
 .checkout {
-    background-color: #FFF;
-    border-radius: 10px;
+	background-color: #fff;
+	border-radius: 10px;
 }
 
 .checkout .removeAll {
-    border-radius: 0;
-    background-color: #f96161;
+	border-radius: 0;
+	background-color: #f96161;
 }
 
 .clearfix::after {
-    content: "";
-    clear: both;
-    display: table;
+	content: '';
+	clear: both;
+	display: table;
 }
 
 #completeOrderWindow {
-    width: 100%;
-    height: 100vh;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 2;
+	width: 100%;
+	height: 100vh;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: rgba(0, 0, 0, 0.5);
+	z-index: 2;
 }
 
 .nodisplay {
-    display: none;
+	display: none;
 }
 
 #completeOrderWindow div {
-    position: fixed;
-    width: 80%;
-    top: 10%;
-    left: 10%;
+	position: fixed;
+	width: 80%;
+	top: 10%;
+	left: 10%;
 }
 
 #completeOrderWindow div input {
-    position: relative;
-    width: 80%;
-    margin-left: 10%;
-    font-size: 1em;
-    height: 2em;
-    border-radius: 10px;
-    border: 2px solid #a8c5c1;
+	position: relative;
+	width: 80%;
+	margin-left: 10%;
+	font-size: 1em;
+	height: 2em;
+	border-radius: 10px;
+	border: 2px solid #a8c5c1;
 }
 
 #completeOrderWindow div select {
-    font-size: 1em;
-    height: 2em;
-    border-radius: 10px;
-    border: 2px solid #a8c5c1;
+	font-size: 1em;
+	height: 2em;
+	border-radius: 10px;
+	border: 2px solid #a8c5c1;
 }
 
 .month {
-    margin-left: 10%;
-    width: 50%;
+	margin-left: 10%;
+	width: 50%;
 }
 
 .year {
-    margin-left: 0;
-    width: 30%;
+	margin-left: 0;
+	width: 30%;
 }
 
 #completeOrderWindow div h3 {
-    margin: 2% 10%;
-    padding: 0;
+	margin: 2% 10%;
+	padding: 0;
 }
 
 .cardType {
-    position: absolute;
-    color: #c4c4c4;
-    font-size: 1em;
-    margin: .45em 0;
-    right: 10%;
-    border-radius: 8px;
-    padding: 0 2px;
-    border: 2px solid #c4c4c4;
-    z-index: 3;
+	position: absolute;
+	color: #c4c4c4;
+	font-size: 1em;
+	margin: 0.45em 0;
+	right: 10%;
+	border-radius: 8px;
+	padding: 0 2px;
+	border: 2px solid #c4c4c4;
+	z-index: 3;
 }
 
 .remove img,
 .add img {
-    pointer-events: none;
-    margin-right: 5px;
-    height: .7em;
+	pointer-events: none;
+	margin-right: 5px;
+	height: 0.7em;
 }
 
 @media screen and (min-width: 768px) {
-    nav a {
-        font-size: 2em;
-    }
+	nav a {
+		font-size: 2em;
+	}
 
-    .menuItems a {
-        font-size: 2em;
-    }
+	.menuItems a {
+		font-size: 2em;
+	}
 
-    .about address,
-    .about a {
-        font-size: 2em;
-    }
+	.about address,
+	.about a {
+		font-size: 2em;
+	}
 
-    nav img {
-        height: .8em;
-    }
+	nav img {
+		height: 0.8em;
+	}
 
-    .container {
-        width: 80%;
-        margin: auto;
-    }
+	.container {
+		width: 80%;
+		margin: auto;
+	}
 
-    .about {
-        height: 10em;
-    }
+	.about {
+		height: 10em;
+	}
 
-    li {
-        width: 32.3%;
-    }
+	li {
+		width: 32.3%;
+	}
 
-    .coffee:hover,
-    .cake:hover {
-        box-shadow: 0 0 10px 0 #000;
-    }
+	#map {
+		width: 60%;
+		float: right;
+	}
 
-    #map {
-        width: 60%;
-        float: right;
-    }
+	.ourStores p {
+		margin: 0 0 10px;
+	}
 
-    .ourStores p {
-        margin: 0 0 10px;
-    }
+	.specials {
+		width: 24%;
+	}
 
-    .specials {
-        width: 24%;
-    }
+	a .badge {
+		right: -10px;
+		bottom: 0.25em;
+	}
 
-    a .badge {
-        right: -10px;
-        bottom: .25em;
-    }
+	.orders {
+		width: 66.6%;
+		justify-content: space-between;
+	}
 
-    .orders {
-        width: 66.6%;
-        justify-content: space-between;
-    }
+	.orders li {
+		width: 49%;
+	}
 
-    .orders li {
-        width: 49%;
-    }
+	.checkout {
+		margin-top: 59.44px;
+		float: right;
+		width: 32.3%;
+	}
 
-    .checkout {
-        margin-top: 59.44px;
-        float: right;
-        width: 32.3%;
-    }
+	#completeOrderWindow div {
+		width: 30%;
+		left: 30%;
+	}
 
-    #completeOrderWindow div {
-        width: 30%;
-        left: 30%;
-    }
+	.close:hover {
+		content: 'X close';
+	}
 
-    .close:hover {
-        content: "X close";
-    }
+	.locations {
+		width: 40%;
+	}
 
-    .locations {
-        width: 40%;
-    }
+	.locations button {
+		width: 45%;
+	}
 
-    .locations button {
-        width: 45%
-    }
-
-    .locations button:nth-child(odd) {
-        margin-right: 5%;
-    }
+	.locations button:nth-child(odd) {
+		margin-right: 5%;
+	}
 }
 
 @media screen and (min-width: 1500px) {
-    li {
-        width: 19%;
-    }
+	li {
+		width: 19%;
+	}
 
-    .orders li {
-        width: 32.3%;
-    }
+	.orders li {
+		width: 32.3%;
+	}
 }
