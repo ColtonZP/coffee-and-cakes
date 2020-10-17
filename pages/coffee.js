@@ -5,10 +5,11 @@ export default function Coffee({ coffee }) {
     return (
         <div>
             <h1>Coffee</h1>
-            <div className="drink-grid">
+            <div className="item-grid">
                 {coffee.map((coffee) => (
                     <div className="item-card" key={coffee.name}>
                         <h2>{coffee.name}</h2>
+                        <p>{coffee.description}</p>
                         <span>
                             <b>Calories</b> {coffee.calories}
                         </span>
@@ -17,7 +18,7 @@ export default function Coffee({ coffee }) {
                             <b>mg</b>
                         </span>
                         <button>
-                            <img src={add} alt="add" />
+                            Add <img src={add} alt="add" />
                         </button>
                     </div>
                 ))}
