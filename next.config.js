@@ -1,7 +1,8 @@
 const path = require('path')
+const withImages = require('next-images')
 require('dotenv').config()
 
-module.exports = {
+module.exports = withImages({
     env: {
         API_URL: process.env.API_URL,
     },
@@ -10,3 +11,4 @@ module.exports = {
         includePaths: [path.join(__dirname, 'styles')],
     },
 }
+)

@@ -1,3 +1,5 @@
+import add from '../public/add.svg'
+
 export default function Coffee({ coffee }) {
     console.log(coffee)
     return (
@@ -5,8 +7,18 @@ export default function Coffee({ coffee }) {
             <main>
                 <h1>Coffee</h1>
                 {coffee.map((coffee) => (
-                    <div key={coffee.name}>
-                        <h1>{coffee.name}</h1>
+                    <div className="item-card" key={coffee.name}>
+                        <h2>{coffee.name}</h2>
+                        <span>
+                            <b>Calories</b> {coffee.calories}
+                        </span>
+                        <span>
+                            <b>Caffeine</b> {coffee.caffeine}
+                            <b>mg</b>
+                        </span>
+                        <button>
+                            <img src={add} alt="add" />
+                        </button>
                     </div>
                 ))}
             </main>
