@@ -4,8 +4,8 @@ export default function Coffee({ coffee }) {
     console.log(coffee)
     return (
         <div>
-            <main>
-                <h1>Coffee</h1>
+            <h1>Coffee</h1>
+            <div className="drink-grid">
                 {coffee.map((coffee) => (
                     <div className="item-card" key={coffee.name}>
                         <h2>{coffee.name}</h2>
@@ -21,9 +21,7 @@ export default function Coffee({ coffee }) {
                         </button>
                     </div>
                 ))}
-            </main>
-
-            <footer></footer>
+            </div>
         </div>
     )
 }
