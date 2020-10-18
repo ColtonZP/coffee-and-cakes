@@ -1,5 +1,14 @@
+@import "items.scss";
+
 * {
     box-sizing: border-box;
+}
+
+:root {
+    --white: #ececec;
+    --teal: #b8e0d2;
+    --blue: #809bce;
+    --orange: #e18335;
 }
 
 html,
@@ -8,7 +17,11 @@ body {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell,
         Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-        font-size: 16px;
+    font-size: 16px;
+}
+
+body {
+    background: var(--white);
 }
 
 a {
@@ -16,29 +29,8 @@ a {
     text-decoration: none;
 }
 
-.item-grid {
-    display: grid;
-    grid-gap: 5rem;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    padding: 5vw;
-    max-width: 1500px;
+.container {
+    max-width: 1600px;
     margin: 0 auto;
-    & .item-card {
-        // height: 250px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        & button {
-            background: transparent;
-            border: none;
-            width: 16px;
-            height: 16px;
-            padding: 0;
-            cursor: pointer;
-            & img {
-                width: 100%;
-                height: 100%;
-            }
-        }
-    }
+    padding: 0 5%;
 }

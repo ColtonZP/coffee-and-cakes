@@ -3,22 +3,24 @@ import add from '../public/add.svg'
 export default function Coffee({ coffee }) {
     console.log(coffee)
     return (
-        <div>
+        <div className="container">
             <h1>Coffee</h1>
             <div className="item-grid">
                 {coffee.map((coffee) => (
                     <div className="item-card" key={coffee.name}>
                         <h2>{coffee.name}</h2>
                         <p>{coffee.description}</p>
-                        <span>
-                            <b>Calories</b> {coffee.calories}
-                        </span>
-                        <span>
-                            <b>Caffeine</b> {coffee.caffeine}
-                            <b>mg</b>
-                        </span>
+                        <div className="nutrition">
+                            <span>
+                                <b>Calories</b> {coffee.calories}
+                            </span>
+                            <span>
+                                <b>Caffeine</b> {coffee.caffeine}mg
+                            </span>
+                        </div>
+                        <span className="price">${coffee.price.toFixed(2)}</span>
                         <button>
-                            Add <img src={add} alt="add" />
+                            <img src={add} alt="add" /> <span>Add</span>
                         </button>
                     </div>
                 ))}

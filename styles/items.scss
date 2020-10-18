@@ -1,0 +1,52 @@
+.item-grid {
+    display: grid;
+    grid-gap: 2rem;
+    grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
+    & .item-card {
+        // height: 250px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        border-radius: 10px;
+        box-shadow: -10px -10px 15px #fff, 5px 5px 15px #555;
+        overflow: hidden;
+        & h2,
+        & p,
+        & .nutrition,
+        & .price,
+        & button {
+            margin: 10px;
+        }
+        & h2 {
+        }
+        & p {
+        }
+        & .nutrition {
+            & span {
+                display: block;
+            }
+        }
+        .price {
+            font-weight: bold;
+        }
+        & button {
+            background: var(--orange);
+            border: none;
+            border-radius: 10px;
+            padding: 0;
+            cursor: pointer;
+            // text-align: left;
+            display: flex;
+            justify-content: center;
+            padding: 5px;
+            & img {
+                width: 16px;
+                height: 16px;
+                margin-right: 5px;
+            }
+            & span {
+                font-size: 16px;
+            }
+        }
+    }
+}
