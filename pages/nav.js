@@ -2,12 +2,25 @@ import Link from 'next/link'
 export default function Nav() {
     return (
         <nav>
-            <Link href="/">
-                <a>Home</a>
-            </Link>
-            <Link href="/coffee">
-                <a>Coffee</a>
-            </Link>
+            <div className="container">
+                <Link href="/">
+                    <a>Home</a>
+                </Link>
+                <Link href="/drinks">
+                    <a>Drinks</a>
+                </Link>
+                <Link href="/food">
+                    <a>Food</a>
+                </Link>
+                <div className="right-menu">
+                    <Link href="/stores">
+                        <a>Find a store</a>
+                    </Link>
+                    <Link href="/bag">
+                        <a>Bag</a>
+                    </Link>
+                </div>
+            </div>
         </nav>
     )
 }
