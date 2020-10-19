@@ -6,11 +6,8 @@ export default function Nav() {
                 <Link href="/">
                     <a>Home</a>
                 </Link>
-                <Link href="/drinks">
-                    <a>Drinks</a>
-                </Link>
-                <Link href="/food">
-                    <a>Food</a>
+                <Link href="/plants">
+                    <a>Plants</a>
                 </Link>
                 <div className="right-menu">
                     <Link href="/stores">

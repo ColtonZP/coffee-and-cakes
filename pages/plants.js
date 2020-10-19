@@ -2,8 +2,9 @@ import Head from 'next/head'
 
 import add from '../public/add.svg'
 
-export default function Drinks({ coffee }) {
+export default function Plants({ coffee }) {
     const { API_URL } = process.env
+
     const isNew = date => {
         const day = new Date(date)
         day.setDate(day.getDate() + 30)
@@ -13,15 +14,16 @@ export default function Drinks({ coffee }) {
     return (
         <div className="container">
             <Head>
-                <title>Drinks</title>
+                <title>Plants</title>
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <main className="drinks">
-                <h1>Coffee</h1>
+                <h1>Plants</h1>
                 <div className="item-grid">
                     {coffee.map(coffee => (
                         <div className="item-card" key={coffee.name}>
                             <img
+                                className="photo"
                                 src={coffee.image && API_URL + coffee.image.url}
                                 alt={coffee.name}
                             />

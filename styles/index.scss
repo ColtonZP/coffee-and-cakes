@@ -7,7 +7,6 @@
 }
 
 :root {
-    --white: #ececec;
     --teal: #48A386;
     --blue: #7794CA;
     --orange: #e18335;
@@ -19,10 +18,6 @@ body {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell,
         Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
-
-body {
-    background: var(--white);
 }
 
 a {
