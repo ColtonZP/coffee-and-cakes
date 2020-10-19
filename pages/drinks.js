@@ -22,6 +22,7 @@ export default function Drinks({ coffee }) {
                     {coffee.map(coffee => (
                         <div className="item-card" key={coffee.name}>
                             <img
+                                className="photo"
                                 src={coffee.image && API_URL + coffee.image.url}
                                 alt={coffee.name}
                             />

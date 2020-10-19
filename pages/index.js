@@ -9,7 +9,7 @@ export default function Home() {
             </Head>
 
             <main>
-                <h1>Inedex</h1>
+                <h1>Index</h1>
             </main>
 
             <footer></footer>
