@@ -9,7 +9,17 @@ export default function Home() {
             </Head>
 
             <main>
-                <h1>Index</h1>
+                <div className="jumbotron">
+                    <div className="block"></div>
+                    <div className="block"></div>
+                    <div className="block"></div>
+                </div>
+                <h1>Fan Favorites</h1>
+                <div className="favs">
+                    <div className="block"></div>
+                    <div className="block"></div>
+                    <div className="block"></div>
+                </div>
             </main>
 
             <footer></footer>

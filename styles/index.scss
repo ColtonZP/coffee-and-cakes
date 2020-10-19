@@ -1,37 +1,26 @@
-@import "items.scss";
-@import "nav.scss";
+.jumbotron {
+    display: grid;
+    grid-gap: 2rem;
+    grid-template-columns: repeat(2, 1fr);
 
-* {
-    box-sizing: border-box;
-    font-size: 16px;
+    & .block {
+        background: lightblue;
+        height: 450px;
+    }
+
+    & .block:nth-child(1) {
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
 }
 
-:root {
-    --white: #ececec;
-    --teal: #48A386;
-    --blue: #7794CA;
-    --orange: #e18335;
-}
+.favs {
+    display: grid;
+    grid-gap: 2rem;
+    grid-template-columns: repeat(3, 1fr);
 
-html,
-body {
-    padding: 0;
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell,
-        Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
-
-body {
-    background: var(--white);
-}
-
-a {
-    color: inherit;
-    text-decoration: none;
-}
-
-.container {
-    max-width: 1550px;
-    margin: 0 auto;
-    padding: 0 2rem;
+    & .block {
+        background: lightblue;
+        height: 250px;
+    }
 }

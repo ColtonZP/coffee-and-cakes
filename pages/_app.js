@@ -1,4 +1,4 @@
-import '../styles/index.scss'
+import '../styles/global.scss'
 import Nav from '../components/nav'
 
 function MyApp({ Component, pageProps }) {
