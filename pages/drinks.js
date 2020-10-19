@@ -1,10 +1,10 @@
 import Head from 'next/head'
-import { span } from 'prelude-ls'
 
 import add from '../public/add.svg'
 
 export default function Drinks({ coffee }) {
-    const isNew = (date) => {
+    const { API_URL } = process.env
+    const isNew = date => {
         const day = new Date(date)
         day.setDate(day.getDate() + 30)
         return day >= new Date()
@@ -19,9 +19,12 @@ export default function Drinks({ coffee }) {
             <main className="drinks">
                 <h1>Coffee</h1>
                 <div className="item-grid">
-                    {coffee.map((coffee) => (
+                    {coffee.map(coffee => (
                         <div className="item-card" key={coffee.name}>
-                            <img src="" alt=""/>
+                            <img
+                                src={coffee.image && API_URL + coffee.image.url}
+                                alt={coffee.name}
+                            />
                             <h2>
                                 {isNew(coffee.published_at) && <span className="new">New</span>}{' '}
                                 {coffee.name}

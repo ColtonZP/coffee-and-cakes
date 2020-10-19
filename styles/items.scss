@@ -27,6 +27,7 @@
             }
             & img {
                 height: 150px;
+                object-fit: cover;
             }
             & .new {
                 color: var(--teal);
