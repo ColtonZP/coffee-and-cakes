@@ -4,10 +4,14 @@ import add from '../public/add.svg'
 
 export default function Drinks({ coffee }) {
     const { API_URL } = process.env
-    const isNew = date => {
-        const day = new Date(date)
+    const isBadge = coffee => {
+        const day = new Date(coffee.published_at)
         day.setDate(day.getDate() + 30)
-        return day >= new Date()
+        if (coffee.seasonal) {
+            return <span className="badge">Seasonal</span>
+        } else if (day >= new Date()) {
+            return <span className="badge">New</span>
+        }
     }
 
     return (
@@ -27,8 +31,7 @@ export default function Drinks({ coffee }) {
                                 alt={coffee.name}
                             />
                             <h2>
-                                {isNew(coffee.published_at) && <span className="new">New</span>}{' '}
-                                {coffee.name}
+                                {isBadge(coffee)} {coffee.name}
                             </h2>
                             <p>{coffee.description}</p>
                             <div className="nutrition">
