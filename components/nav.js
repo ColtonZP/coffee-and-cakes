@@ -1,24 +1,24 @@
-import Link from 'next/link'
+import { useState } from 'react'
+import Links from './links'
+
 export default function Nav() {
+    const [menu, toggleMenu] = useState(false)
     return (
         <nav>
-            <div className="container">
-                <Link href="/">
-                    <a>Home</a>
-                </Link>
-                <Link href="/drinks">
-                    <a>Drinks</a>
-                </Link>
-                <Link href="/food">
-                    <a>Food</a>
-                </Link>
-                <div className="right-menu">
-                    <Link href="/stores">
-                        <a>Find a store</a>
-                    </Link>
-                    <Link href="/bag">
-                        <a>Bag</a>
-                    </Link>
+            <div className="mobile">
+                <div className="container">
+                    {/* toggle class active if pressed, change to button */}
+                    <div className="menu-bars">
+                        <div className="top bar"></div>
+                        <div className="middle bar"></div>
+                        <div className="bottom bar"></div>
+                    </div>
+                    {/* <Links /> */}
+                </div>
+            </div>
+            <div className="desktop">
+                <div className="container">
+                    <Links />
                 </div>
             </div>
         </nav>

@@ -8,14 +8,40 @@ nav {
 
     & .container {
         display: flex;
-        flex-direction: row;
-        
+        flex-direction: column;
+
         & a {
             margin-right: 48px;
             font-size: 20px;
             font-weight: 500;
         }
-        
+    }
+}
+
+.mobile {
+    & .container {
+
+        & a {
+            margin-right: 48px;
+            font-size: 20px;
+            font-weight: 500;
+        }
+        & .right-menu {
+            & a {
+                display: block;
+            }
+        }
+    }
+
+    @media screen and (min-width: 720px) {
+        display: none;
+    }
+}
+
+.desktop {
+    & .container {
+        flex-direction: row;
+
         & .right-menu {
             margin-left: auto;
             & a:last-child {
@@ -23,4 +49,50 @@ nav {
             }
         }
     }
+
+    @media screen and (max-width: 720px) {
+        display: none;
+    }
 }
+
+.menu-bars {
+  width: 35px;
+  height: 35px;
+  margin: 0 0 auto 0;
+  position: relative;
+  & .bar {
+    background: #000;
+    width: 100%;
+    height: 7px;
+    border-radius: 5px;
+    position: absolute;
+}
+  & .top {
+    transition: .2s margin .1s, transform .05s;
+  }
+  & .middle {
+    margin-top: 40%;
+    transition: all .2s;
+  }
+  & .bottom {
+    margin-top: 80%;
+    transition: .2s margin .1s, transform .05s;
+  }
+}
+
+.menu-bars:hover, .active {
+  & .top {
+    margin-top: 40%;
+    transform: rotate(-45deg);
+    transition: margin .1s, .1s transform .2s;
+  }
+  & .middle {
+    opacity: 0;
+  }
+  & .bottom {
+    margin-top: 40%;
+    transform: rotate(45deg);
+    transition: margin .1s, .1s transform .2s;
+  }
+}
+
