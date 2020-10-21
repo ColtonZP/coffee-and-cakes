@@ -1,9 +1,11 @@
 import Head from 'next/head'
+import { observer } from 'mobx-react-lite'
 
 import add from '../public/add.svg'
 
-export default function Drinks({ coffee }) {
+const Drinks = ({ coffee, bag }) => {
     const { API_URL } = process.env
+    const { addItem } = bag
 
     const isBadge = coffee => {
         const day = new Date(coffee.published_at)
@@ -44,7 +46,7 @@ export default function Drinks({ coffee }) {
                                 </span>
                             </div>
                             <span className="price">${coffee.price.toFixed(2)}</span>
-                            <button>
+                            <button onClick={() => addItem(coffee)}>
                                 <img src={add} alt="add" /> <span>Add</span>
                             </button>
                         </div>
@@ -54,6 +56,8 @@ export default function Drinks({ coffee }) {
         </div>
     )
 }
+
+export default observer(Drinks)
 
 export async function getServerSideProps() {
     const { API_URL } = process.env
