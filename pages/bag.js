@@ -2,7 +2,7 @@ import Head from 'next/head'
 import { observer } from 'mobx-react-lite'
 
 const Bag = ({ bag }) => {
-    const { items, addItem } = bag
+    const { items, removeItem } = bag
     return (
         <div className="container">
             <Head>
@@ -16,10 +16,10 @@ const Bag = ({ bag }) => {
                         <li key={item}>
                             <span>{item.name} x</span>
                             <input type="number" value={item.quantity} />
+                            <button onClick={() => removeItem(item.name)}>remove</button>
                         </li>
                     ))}
                 </ul>
-                <button onClick={() => addItem({ name: 'item' })}>Add Item</button>
             </main>
         </div>
     )
