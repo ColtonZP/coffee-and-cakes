@@ -21,8 +21,6 @@ export default function Home() {
                     <div className="block"></div>
                 </div>
             </main>
-
-            <footer></footer>
         </div>
     )
 }
