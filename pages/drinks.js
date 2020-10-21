@@ -4,6 +4,7 @@ import add from '../public/add.svg'
 
 export default function Drinks({ coffee }) {
     const { API_URL } = process.env
+
     const isBadge = coffee => {
         const day = new Date(coffee.published_at)
         day.setDate(day.getDate() + 30)
@@ -27,7 +28,7 @@ export default function Drinks({ coffee }) {
                         <div className="item-card" key={coffee.name}>
                             <img
                                 className="photo"
-                                src={coffee.image && API_URL + coffee.image.url}
+                                src={coffee.image && coffee.image.url}
                                 alt={coffee.name}
                             />
                             <h2>
