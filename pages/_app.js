@@ -1,5 +1,5 @@
 import '../styles/global.scss'
-import BagState from '../components/Bag.js'
+import BagState from '../lib/Bag.js'
 import Nav from '../components/nav'
 
 function MyApp({ Component, pageProps }) {

@@ -2,11 +2,18 @@
     list-style-type: none;
     display: flex;
     align-items: center;
-    & .title {
-        flex-grow: 1;
-    }
     & img {
         height: 60px;
         width: 60px;
+    }
+    & .title {
+        flex-grow: 1;
+    }
+    & input {
+        width: 6ch;
+        border: none;
+        outline: none;
+        padding: 5px;
+        border-radius: 10px;
     }
 }
