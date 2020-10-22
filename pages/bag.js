@@ -20,7 +20,7 @@ const Bag = ({ bag }) => {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
-            <main>
+            <main className="bag">
                 <ul>
                     {items.map(item => (
                         <Item item={item} bag={bag} />
