@@ -1,0 +1,12 @@
+.bagItem {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    & .title {
+        flex-grow: 1;
+    }
+    & img {
+        height: 60px;
+        width: 60px;
+    }
+}

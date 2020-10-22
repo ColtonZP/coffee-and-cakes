@@ -1,6 +1,8 @@
 import Head from 'next/head'
 import { observer } from 'mobx-react-lite'
 
+import Item from '../components/BagItem'
+
 const Bag = ({ bag }) => {
     const { items, removeItem } = bag
     return (
@@ -13,11 +15,7 @@ const Bag = ({ bag }) => {
             <main>
                 <ul>
                     {items.map(item => (
-                        <li key={item}>
-                            <span>{item.name} x</span>
-                            <input type="number" value={item.quantity} />
-                            <button onClick={() => removeItem(item.name)}>remove</button>
-                        </li>
+                        <Item item={item} bag={bag} />
                     ))}
                 </ul>
             </main>
