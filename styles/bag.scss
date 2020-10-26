@@ -20,8 +20,9 @@
         }
 
         & hr {
-            border: 1px solid var(--orange);
-
+            border-top: none;
+            border-bottom: 1px solid var(--orange);
+            
             &:last-child {
                 display: none;
             }

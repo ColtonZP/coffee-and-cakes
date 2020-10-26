@@ -4,7 +4,8 @@
     padding: 10px 0;
 
     &:last-child {
-        margin: 0;
+        // margin: 0;
+        background: red;
     }
 
     & .photo {
@@ -12,6 +13,7 @@
         width: 60px;
         margin-right: 10px;
         border-radius: 50%;
+        border: 1px solid var(--orange);
     }
 
     & .title {
