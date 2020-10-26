@@ -17,12 +17,14 @@
             flex-direction: column;
             // justify-content: space-between;
             border-radius: 10px;
-            box-shadow: -5px -5px 10px 0 rgba(255, 255, 255, 0.7),
-                5px 5px 10px -5px rgba(0, 0, 0, 0.6);
-            overflow: hidden;
+            // box-shadow: -5px -5px 10px 0 rgba(255, 255, 255, 0.7),
+            //     5px 5px 10px -5px rgba(0, 0, 0, 0.6);
+            // overflow: hidden;
             position: relative;
-            padding: 10px;
-
+            padding: 75px 10px 10px;
+            margin-top: 75px;
+            background: white;
+            border: 2px solid var(--orange);
             & h2,
             & p,
             & .nutrition,
@@ -33,7 +35,13 @@
             & .photo {
                 height: 150px;
                 width: 150px;
-                margin: 0 auto;
+                top: -75px;
+                left: calc(50% - 75px);
+                position: absolute;
+                border-radius: 50%;
+                border: 2px solid var(--orange);
+                object-fit: cover;
+                background: var(--orange);
             }
 
             & h2 {

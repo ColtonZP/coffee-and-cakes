@@ -4,7 +4,7 @@ import { observer } from 'mobx-react-lite'
 import Item from '../components/BagItem'
 
 const Bag = ({ bag }) => {
-    const { items, removeItem } = bag
+    const { items } = bag
 
     const getTotal = () => {
         let price = 0
@@ -23,7 +23,7 @@ const Bag = ({ bag }) => {
             <main className="bag">
                 <ul>
                     {items.map(item => (
-                        <Item item={item} bag={bag} />
+                        <Item key={item} item={item} bag={bag} />
                     ))}
                 </ul>
                 {items.length > 0 ? (
