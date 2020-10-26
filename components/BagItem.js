@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import { observer } from 'mobx-react-lite'
 
+import del from '../public/delete.svg'
+
 const BagItem = ({ item, bag }) => {
     const { removeItem, changeQuantity } = bag
 
@@ -13,9 +15,9 @@ const BagItem = ({ item, bag }) => {
 
     return (
         <li className="bagItem" key={item}>
-            <img src={item.image && item.image.url} alt="" />
+            <img className="photo" src={item.image && item.image.url} alt="" />
             <span className="title">{item.name}</span>
-            <span>${item.price} x</span>
+            <span>${item.price}</span>
             <input
                 type="number"
                 value={item.quantity}
@@ -23,7 +25,9 @@ const BagItem = ({ item, bag }) => {
                 min="0"
             />
             {/* <span>${(item.price * item.quantity).toFixed(2)}</span> */}
-            <button onClick={() => removeItem(item.name)}>X</button>
+            <button onClick={() => removeItem(item.name)}>
+                <img src={del} alt="delete" />
+            </button>
         </li>
     )
 }

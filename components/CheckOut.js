@@ -3,14 +3,14 @@ export default function CheckOut({ price }) {
     const total = (parseFloat(price) + parseFloat(tax)).toFixed(2)
     return (
         <div className="checkOut">
-            <span className="price">
+            <span className="subtotal">
                 <b>Subtotal:</b> {price}
             </span>
             <span className="tax">
                 <b>Tax:</b> {tax}
             </span>
             <span className="total">
-                <b>Total:</b> {total}
+                <b>Total:</b> <span className="price">${total}</span>
             </span>
             <button className="checkOutButton">Check Out</button>
         </div>

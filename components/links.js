@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 export default function Links() {
     return (
-        <React.Fragment>
+        <>
             <Link href="/">
                 <a>Home</a>
             </Link>
@@ -20,6 +20,6 @@ export default function Links() {
                     <a>Bag</a>
                 </Link>
             </div>
-        </React.Fragment>
+        </>
     )
 }

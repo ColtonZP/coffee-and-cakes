@@ -1,20 +1,42 @@
 .bag {
     & ul {
-    }
-    & .checkOut {
-        padding: 10px;
         background-color: white;
         border-radius: 10px;
-        border: 2px solid var(--orange);
+        padding: 10px;
+
+        & hr {
+            border: 1px solid var(--orange);
+
+            &:last-child {
+                display: none;
+            }
+        }
+    }
+
+    & .checkOut {
+        padding: 10px;
+        background: radial-gradient(ellipse at top right, #e79a57 10%, var(--orange) 90%);
+        border-radius: 10px;
         position: sticky;
         width: 100%;
         bottom: 0;
+
         & span {
             display: block;
+            color: #333333;
         }
+
         & button {
             margin-top: 10px;
             width: 100%;
+            background: white;
+        }
+
+        & .price {
+            display: block;
+            font-weight: bold;
+            font-size: 2em;
+            color: #000;
         }
     }
 }

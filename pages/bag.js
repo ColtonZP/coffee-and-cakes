@@ -24,7 +24,10 @@ const Bag = ({ bag }) => {
             <main className="bag">
                 <ul>
                     {items.map(item => (
-                        <BagItem key={item} item={item} bag={bag} />
+                        <>
+                            <BagItem key={item} item={item} bag={bag} />
+                            <hr />
+                        </>
                     ))}
                 </ul>
                 {items.length > 0 ? (
