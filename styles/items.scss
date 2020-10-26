@@ -2,7 +2,7 @@
     padding: 2rem 0;
 
     & h1 {
-        font-size: 48px;
+        font-size: 3em;
         margin: 0 0 0.5em;
         font-weight: 600;
     }
@@ -25,6 +25,7 @@
             margin-top: 75px;
             background: white;
             border: 2px solid var(--orange);
+
             & h2,
             & p,
             & .nutrition,
