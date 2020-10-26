@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { observer } from 'mobx-react-lite'
 
-const Item = ({ item, bag }) => {
+const BagItem = ({ item, bag }) => {
     const { removeItem, changeQuantity } = bag
 
     function handleChange(itemName, e) {
@@ -28,4 +28,4 @@ const Item = ({ item, bag }) => {
     )
 }
 
-export default observer(Item)
+export default observer(BagItem)

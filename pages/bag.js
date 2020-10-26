@@ -1,7 +1,8 @@
 import Head from 'next/head'
 import { observer } from 'mobx-react-lite'
 
-import Item from '../components/BagItem'
+import BagItem from '../components/BagItem'
+import CheckOut from '../components/CheckOut'
 
 const Bag = ({ bag }) => {
     const { items } = bag
@@ -23,16 +24,14 @@ const Bag = ({ bag }) => {
             <main className="bag">
                 <ul>
                     {items.map(item => (
-                        <Item key={item} item={item} bag={bag} />
+                        <BagItem key={item} item={item} bag={bag} />
                     ))}
                 </ul>
                 {items.length > 0 ? (
-                    <div>
-                        <span>Total: {getTotal()}</span>
-                    </div>
+                    <CheckOut price={getTotal()} />
                 ) : (
                     <div>
-                        <span>Cart Empty</span>
+                        <span>Bag Empty</span>
                     </div>
                 )}
             </main>

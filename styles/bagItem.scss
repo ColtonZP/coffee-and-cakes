@@ -2,9 +2,12 @@
     display: flex;
     align-items: center;
     // padding: 0;
+    margin-bottom: 20px;
     & img {
         height: 60px;
         width: 60px;
+        margin-right: 10px;
+        border-radius: 50%;
     }
     & .title {
         flex-grow: 1;
@@ -15,5 +18,9 @@
         outline: none;
         padding: 5px;
         border-radius: 10px;
+    }
+    & button {
+        background: none;
+        color: red;
     }
 }
