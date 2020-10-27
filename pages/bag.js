@@ -22,16 +22,18 @@ const Bag = ({ bag }) => {
             </Head>
 
             <main className="bag">
-                <ul>
-                    {items.map(item => (
-                        <>
-                            <BagItem key={item} item={item} bag={bag} />
-                            <hr />
-                        </>
-                    ))}
-                </ul>
                 {items.length > 0 ? (
-                    <CheckOut price={getTotal()} />
+                    <>
+                        <ul>
+                            {items.map(item => (
+                                <>
+                                    <BagItem key={item} item={item} bag={bag} />
+                                    <hr />
+                                </>
+                            ))}
+                        </ul>
+                        <CheckOut price={getTotal()} />
+                    </>
                 ) : (
                     <div>
                         <span>Bag Empty</span>

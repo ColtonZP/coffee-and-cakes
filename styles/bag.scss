@@ -4,8 +4,8 @@
 
     @media screen and (min-width: 640px) {
         display: flex;
-        justify-content:space-between;
-        align-items:flex-start;
+        justify-content: space-between;
+        align-items: flex-start;
     }
 
     & ul {
@@ -22,7 +22,7 @@
         & hr {
             border-top: none;
             border-bottom: 1px solid var(--orange);
-            
+
             &:last-child {
                 display: none;
             }

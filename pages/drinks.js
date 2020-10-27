@@ -3,7 +3,7 @@ import { observer } from 'mobx-react-lite'
 
 import add from '../public/add.svg'
 
-const Drinks = ({ coffee, bag }) => {
+export default function Drinks({ coffee, bag }) {
     const { API_URL } = process.env
     const { addItem } = bag
 
@@ -57,7 +57,6 @@ const Drinks = ({ coffee, bag }) => {
     )
 }
 
-export default observer(Drinks)
 
 export async function getServerSideProps() {
     const { API_URL } = process.env
