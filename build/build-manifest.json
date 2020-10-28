@@ -1,0 +1,51 @@
+{
+  "polyfillFiles": [
+    "static/chunks/polyfills-fa276ba060a4a8ac7eef.js"
+  ],
+  "devFiles": [],
+  "ampDevFiles": [],
+  "lowPriorityFiles": [
+    "static/8Dd-tQKf2Y8wL789I50kB/_buildManifest.js",
+    "static/8Dd-tQKf2Y8wL789I50kB/_ssgManifest.js"
+  ],
+  "pages": {
+    "/": [
+      "static/chunks/main-0ea7184a6b4b30cfbe84.js",
+      "static/chunks/webpack-e067438c4cf4ef2ef178.js",
+      "static/chunks/framework.964e76377795026233d5.js",
+      "static/chunks/pages/index-767c26530dc63c057490.js"
+    ],
+    "/_app": [
+      "static/chunks/main-0ea7184a6b4b30cfbe84.js",
+      "static/chunks/webpack-e067438c4cf4ef2ef178.js",
+      "static/chunks/framework.964e76377795026233d5.js",
+      "static/chunks/e82996df.99d126ad2bdac8f38370.js",
+      "static/chunks/f6078781a05fe1bcb0902d23dbbb2662c8d200b3.c44395309be57f601359.js",
+      "static/css/bbc24907e55136a9ea92.css",
+      "static/chunks/pages/_app-af149e6d0361e72687b8.js"
+    ],
+    "/_error": [
+      "static/chunks/main-0ea7184a6b4b30cfbe84.js",
+      "static/chunks/webpack-e067438c4cf4ef2ef178.js",
+      "static/chunks/framework.964e76377795026233d5.js",
+      "static/chunks/pages/_error-9fd2a92907d9e764c1c2.js"
+    ],
+    "/bag": [
+      "static/chunks/main-0ea7184a6b4b30cfbe84.js",
+      "static/chunks/webpack-e067438c4cf4ef2ef178.js",
+      "static/chunks/framework.964e76377795026233d5.js",
+      "static/chunks/e82996df.99d126ad2bdac8f38370.js",
+      "static/chunks/f0ef6b89da95b96efcd76c6dd7e06e91b31f6b73.f1bd82a30d339c75d64b.js",
+      "static/chunks/pages/bag-df3c3783c1fd51c4e7b1.js"
+    ],
+    "/drinks": [
+      "static/chunks/main-0ea7184a6b4b30cfbe84.js",
+      "static/chunks/webpack-e067438c4cf4ef2ef178.js",
+      "static/chunks/framework.964e76377795026233d5.js",
+      "static/chunks/e82996df.99d126ad2bdac8f38370.js",
+      "static/chunks/f0ef6b89da95b96efcd76c6dd7e06e91b31f6b73.f1bd82a30d339c75d64b.js",
+      "static/chunks/pages/drinks-00895e01adce0519cf8e.js"
+    ]
+  },
+  "ampFirstPages": []
+}
