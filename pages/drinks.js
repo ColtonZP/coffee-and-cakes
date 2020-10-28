@@ -57,7 +57,6 @@ export default function Drinks({ coffee, bag }) {
     )
 }
 
-
 export async function getServerSideProps() {
     const { API_URL } = process.env
     const res = await fetch(`${API_URL}/coffees`)

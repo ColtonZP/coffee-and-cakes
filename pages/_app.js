@@ -2,13 +2,20 @@ import '../styles/global.scss'
 import BagState from '../lib/Bag.js'
 import Nav from '../components/nav'
 
-function MyApp({ Component, pageProps }) {
-    return (
-        <React.Fragment>
-            <Nav />
-            <Component {...pageProps} bag={BagState} />
-        </React.Fragment>
-    )
-}
+export default class MyApp extends React.Component {
+    componentDidMount() {
+        const res = JSON.parse(localStorage.getItem('inBag'))
+        BagState.pullItems(res)
+    }
 
-export default MyApp
+    render() {
+        const { Component, pageProps } = this.props
+
+        return (
+            <>
+                <Nav />
+                <Component {...pageProps} bag={BagState} />
+            </>
+        )
+    }
+}
