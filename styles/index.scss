@@ -4,8 +4,42 @@
     grid-template-columns: repeat(1, 1fr);
 
     & .block {
-        background: lightblue;
+        position: relative;
+        background: white;
         height: 450px;
+        border-radius: 10px;
+
+        & .background {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+
+        & .ad {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-direction: row;
+            // flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            justify-items: center;
+
+            & p {
+                font-size: 2rem;
+            }
+
+            & .itemImage {
+                display: block !important;
+                width: 250px;
+                height: 250px;
+                object-fit: contain;
+                border-radius: 50%;
+                border: 5px solid var(--orange);
+            }
+        }
     }
 
     // & .block:nth-child(1) {
