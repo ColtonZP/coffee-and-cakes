@@ -4,7 +4,12 @@ import Nav from '../components/nav'
 
 export default class MyApp extends React.Component {
     componentDidMount() {
-        const res = JSON.parse(localStorage.getItem('inBag'))
+        let res = JSON.parse(localStorage.getItem('inBag'))
+
+        if (res === null || res === undefined) {
+            res = []
+        }
+
         BagState.pullItems(res)
     }
 

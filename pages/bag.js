@@ -14,6 +14,7 @@ const Bag = ({ bag }) => {
 
         return price.toFixed(2)
     }
+
     return (
         <div className="container">
             <Head>
