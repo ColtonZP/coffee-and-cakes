@@ -2,7 +2,7 @@
     position: relative;
     padding: 2rem 0;
 
-    @media screen and (min-width: 640px) {
+    @media screen and (min-width: 510px) {
         display: flex;
         justify-content: space-between;
         align-items: flex-start;
@@ -14,7 +14,7 @@
         padding: 10px;
         margin: 0 0 2rem;
 
-        @media screen and (min-width: 640px) {
+        @media screen and (min-width: 510px) {
             flex-grow: 1;
             margin-right: 2rem;
         }
@@ -37,7 +37,7 @@
         width: 100%;
         bottom: 0;
 
-        @media screen and (min-width: 640px) {
+        @media screen and (min-width: 510px) {
             width: 350px;
         }
 

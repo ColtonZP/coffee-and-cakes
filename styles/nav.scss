@@ -6,7 +6,7 @@ nav {
     background: var(--white);
     z-index: 2;
 
-    & .container {
+    & .links {
         display: flex;
         flex-direction: column;
 
@@ -19,27 +19,87 @@ nav {
 }
 
 .mobile {
-    & .container {
+    & .links {
         & a {
-            margin-right: 48px;
-            font-size: 20px;
+            // margin-right: 48px;
+            font-size: 32px;
             font-weight: 500;
-        }
-
-        & .right-menu {
-            & a {
-                display: block;
-            }
+            position: relative;
+            margin: 16px 0;
+            display: block;
         }
     }
 
-    @media screen and (min-width: 640px) {
+    & .links {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: var(--white);
+        padding:  50px 2rem 0;
+        overflow: scroll;
+    }
+
+    .menu-bars {
+        width: 35px;
+        height: 35px;
+        margin: 0 0 auto 0;
+        position: relative;
+        padding: 0;
+        background: none;
+        outline: none;
+        z-index: 2;
+
+        & .bar {
+            background: #000;
+            width: 100%;
+            height: 7px;
+            border-radius: 5px;
+            position: absolute;
+        }
+
+        & .top {
+            top: 0;
+            transition: 0.2s top 0.1s, transform 0.05s;
+        }
+
+        & .middle {
+            top: 14px;
+            transition: all 0.2s;
+        }
+
+        & .bottom {
+            top: 28px;
+            transition: 0.2s top 0.1s, transform 0.05s;
+        }
+    }
+
+    .active {
+        & .top {
+            top: 14px;
+            transform: rotate(-45deg);
+            transition: top 0.1s, 0.1s transform 0.2s;
+        }
+
+        & .middle {
+            opacity: 0;
+        }
+
+        & .bottom {
+            top: 14px;
+            transform: rotate(45deg);
+            transition: top 0.1s, 0.1s transform 0.2s;
+        }
+    }
+
+    @media screen and (min-width: 510px) {
         display: none;
     }
 }
 
 .desktop {
-    & .container {
+    & .links {
         flex-direction: row;
 
         & .right-menu {
@@ -50,55 +110,7 @@ nav {
         }
     }
 
-    @media screen and (max-width: 640px) {
+    @media screen and (max-width: 510px) {
         display: none;
-    }
-}
-
-.menu-bars {
-    width: 35px;
-    height: 35px;
-    margin: 0 0 auto 0;
-    position: relative;
-
-    & .bar {
-        background: #000;
-        width: 100%;
-        height: 7px;
-        border-radius: 5px;
-        position: absolute;
-    }
-
-    & .top {
-        transition: 0.2s margin 0.1s, transform 0.05s;
-    }
-
-    & .middle {
-        margin-top: 40%;
-        transition: all 0.2s;
-    }
-
-    & .bottom {
-        margin-top: 80%;
-        transition: 0.2s margin 0.1s, transform 0.05s;
-    }
-}
-
-.menu-bars:hover,
-.active {
-    & .top {
-        margin-top: 40%;
-        transform: rotate(-45deg);
-        transition: margin 0.1s, 0.1s transform 0.2s;
-    }
-
-    & .middle {
-        opacity: 0;
-    }
-
-    & .bottom {
-        margin-top: 40%;
-        transform: rotate(45deg);
-        transition: margin 0.1s, 0.1s transform 0.2s;
     }
 }
