@@ -6,7 +6,7 @@
     & .block {
         position: relative;
         background: white;
-        height: 450px;
+        height: 50vh;
         border-radius: 10px;
 
         & .background {
@@ -21,23 +21,36 @@
             position: relative;
             z-index: 1;
             display: flex;
-            flex-direction: row;
-            // flex-wrap: wrap;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
-            justify-items: center;
+            padding: var(--extra-spacing);
+            height: 100%;
 
             & p {
-                font-size: 2rem;
+                font-size: 22px;
+                text-align: center;
+                flex-grow: 1;
             }
 
             & .itemImage {
                 display: block !important;
-                width: 250px;
-                height: 250px;
-                object-fit: contain;
+                width: 75%;
+                object-fit: cover;
                 border-radius: 50%;
                 border: 5px solid var(--orange);
+            }
+
+            @media screen and (min-width: 510px) {
+                flex-direction: row;
+                & p {
+                    font-size: 32px;
+                }
+
+                & .itemImage {
+                    width: 40%;
+                    margin-right: var(--spacing);
+                }
             }
         }
     }
@@ -58,6 +71,6 @@
         height: 250px;
     }
 
-    @media screen and (min-width: 720px) {
+    @media screen and (min-width: 510px) {
     }
 }

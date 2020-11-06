@@ -22,9 +22,17 @@ export default function Home({ ads }) {
                     </div>
                     <div className="block">
                         <img className="background" src={middleAd.Background.url} alt="" />
+                        <div className="ad">
+                            <p>{middleAd.Description}</p>
+                            <img className="itemImage" src={middleAd.coffee.image.url} alt="" />
+                        </div>
                     </div>
                     <div className="block">
                         <img className="background" src={bottomAd.Background.url} alt="" />
+                        <div className="ad">
+                            <img className="itemImage" src={bottomAd.coffee.image.url} alt="" />
+                            <p>{bottomAd.Description}</p>
+                        </div>
                     </div>
                 </div>
                 <h1>Fan Favorites</h1>
