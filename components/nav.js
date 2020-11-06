@@ -16,7 +16,7 @@ export default function Nav() {
                         <div className="middle bar"></div>
                         <div className="bottom bar"></div>
                     </button>
-                    {menu && <Links />}
+                    {menu && <Links toggleMenu={toggleMenu} />}
                 </div>
             </div>
             <div className="desktop">
