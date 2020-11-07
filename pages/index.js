@@ -23,8 +23,8 @@ export default function Home({ ads }) {
                     <div className="block">
                         <img className="background" src={middleAd.Background.url} alt="" />
                         <div className="ad">
-                            <p>{middleAd.Description}</p>
                             <img className="itemImage" src={middleAd.coffee.image.url} alt="" />
+                            <p>{middleAd.Description}</p>
                         </div>
                     </div>
                     <div className="block">
@@ -35,11 +35,17 @@ export default function Home({ ads }) {
                         </div>
                     </div>
                 </div>
-                <h1>Fan Favorites</h1>
                 <div className="favs">
-                    <div className="block"></div>
-                    <div className="block"></div>
-                    <div className="block"></div>
+                    <div className="block">{/* happy hour */}</div>
+                    <div className="block">{/* delivery */}</div>
+                    <div className="block">{/* contactless order and pick up */}</div>
+                    <div className="block">{/* specials */}</div>
+                </div>
+                <div className="contact">
+                    {/*
+                        social links
+                        email list
+                    */}
                 </div>
             </main>
         </div>
