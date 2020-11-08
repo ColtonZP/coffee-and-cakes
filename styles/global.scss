@@ -17,6 +17,7 @@
     --blue: #7794ca;
     --orange: #e18335;
 
+    --s-spacing: 10px;
     --spacing: 24px;
     --x-spacing: 48px;
     --xl-spacing: 96px;
@@ -41,6 +42,7 @@ button {
     border: none;
     border-radius: 10px;
     cursor: pointer;
+    padding: 6px 10px;
 }
 
 ul {
@@ -68,4 +70,8 @@ a {
     width: 100vw;
     position: absolute;
     top: 0;
+}
+
+.address {
+    margin: var(--s-spacing) 0;
 }

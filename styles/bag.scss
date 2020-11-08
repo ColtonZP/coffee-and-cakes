@@ -41,7 +41,11 @@
             width: 350px;
         }
 
-        & span {
+        & .location {
+            margin-bottom: var(--spacing)
+        }
+
+        & span, & address {
             display: block;
             color: #333333;
         }
@@ -52,7 +56,7 @@
             background: white;
         }
 
-        & .price {
+        & .price, & .sub {
             display: block;
             font-weight: bold;
             font-size: 2em;

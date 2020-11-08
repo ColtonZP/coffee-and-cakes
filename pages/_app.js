@@ -4,13 +4,19 @@ import Nav from '../components/nav'
 
 export default class MyApp extends React.Component {
     componentDidMount() {
-        let res = JSON.parse(localStorage.getItem('inBag'))
+        let inBag = JSON.parse(localStorage.getItem('inBag'))
+        let location = JSON.parse(localStorage.getItem('store'))
 
-        if (res === null || res === undefined) {
-            res = []
+        if (inBag === null || inBag === undefined) {
+            inBag = []
         }
 
-        BagState.pullItems(res)
+        if (location === null || location === undefined) {
+            location = []
+        }
+
+        BagState.pullItems(inBag)
+        BagState.setLocation(location)
     }
 
     render() {

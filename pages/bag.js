@@ -5,7 +5,7 @@ import BagItem from '../components/BagItem'
 import CheckOut from '../components/CheckOut'
 
 const Bag = ({ bag }) => {
-    const { items } = bag
+    const { items, store } = bag
 
     const getTotal = () => {
         let price = 0
@@ -33,7 +33,7 @@ const Bag = ({ bag }) => {
                                 </>
                             ))}
                         </ul>
-                        <CheckOut price={getTotal()} />
+                        <CheckOut price={getTotal()} store={store} />
                     </>
                 ) : (
                     <div>
