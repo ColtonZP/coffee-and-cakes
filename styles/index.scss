@@ -70,17 +70,3 @@
     //     grid-column-end: 3;
     // }
 }
-
-.favs {
-    display: grid;
-    grid-gap: 2rem;
-    grid-template-columns: repeat(1, 1fr);
-
-    & .block {
-        background: lightblue;
-        height: 250px;
-    }
-
-    @media screen and (min-width: 510px) {
-    }
-}
