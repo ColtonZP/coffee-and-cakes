@@ -24,7 +24,7 @@ const options = {
 export default function Map({ bag }) {
     const [selected, setSelected] = useState(null)
     const { MAPS_KEY } = process.env
-    const { setStore } = bag
+    const { setStore, store } = bag
 
     const { isLoaded, loadError } = useLoadScript({
         googleMapsApiKey: MAPS_KEY,
@@ -65,12 +65,15 @@ export default function Map({ bag }) {
                                 <address>{selected.address}</address>
                                 <address>{selected.address2}</address>
                             </div>
-
-                            <button
-                                className="setLocationButton"
-                                onClick={() => setStore(selected)}>
-                                Set as my location
-                            </button>
+                            {store !== selected ? (
+                                <button
+                                    className="setLocationButton"
+                                    onClick={() => setStore(selected)}>
+                                    Set pick up
+                                </button>
+                            ) : (
+                                <span>Your store</span>
+                            )}
                         </div>
                     </InfoWindow>
                 )}
