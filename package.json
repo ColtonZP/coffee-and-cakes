@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@react-google-maps/api": "^1.13.0",
     "dotenv": "^8.2.0",
     "mobx": "^6.0.1",
     "mobx-react-lite": "^3.0.1",
