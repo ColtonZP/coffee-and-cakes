@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { GoogleMap, useLoadScript, Marker, InfoWindow } from '@react-google-maps/api'
 
 import mapStyles from '../lib/MapsStyles'
+import Stores from '../lib/Stores'
 
 const libraries = ['places']
 
@@ -20,41 +21,10 @@ const options = {
     disableDefaultUI: true,
 }
 
-const locations = [
-    {
-        lat: 47.6105161,
-        lng: -122.3425511,
-        sub: 'Pike Place',
-        address: '1915 1st Ave',
-        address2: 'Seattle, WA 98101',
-    },
-    {
-        lat: 47.624059,
-        lng: -122.3213205,
-        sub: 'Capital Hill',
-        address: '536 Broadway E',
-        address2: 'Seattle, WA 98102',
-    },
-    {
-        lat: 47.639718,
-        lng: -122.3990656,
-        sub: 'Magnolia',
-        address: '3200 W McGraw St',
-        address2: 'Seattle, WA 98199',
-    },
-    {
-        lat: 47.583712,
-        lng: -122.3867149,
-        sub: 'North Admiral',
-        address: '2206 California Ave SW',
-        address2: 'Seattle, Wa 98116',
-    },
-]
-
 export default function Map({ bag }) {
     const [selected, setSelected] = useState(null)
     const { MAPS_KEY } = process.env
-    const { setLocation } = bag
+    const { setStore } = bag
 
     const { isLoaded, loadError } = useLoadScript({
         googleMapsApiKey: MAPS_KEY,
@@ -71,7 +41,7 @@ export default function Map({ bag }) {
                 zoom={13.2}
                 center={center}
                 options={options}>
-                {locations.map(location => (
+                {Stores.map(location => (
                     <Marker
                         key={location.sub}
                         position={{ lat: location.lat, lng: location.lng }}
@@ -98,7 +68,7 @@ export default function Map({ bag }) {
 
                             <button
                                 className="setLocationButton"
-                                onClick={() => setLocation(selected)}>
+                                onClick={() => setStore(selected)}>
                                 Set as my location
                             </button>
                         </div>

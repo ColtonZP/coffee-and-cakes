@@ -16,7 +16,7 @@ export default class MyApp extends React.Component {
         }
 
         BagState.pullItems(inBag)
-        BagState.setLocation(location)
+        BagState.setStore(location)
     }
 
     render() {
