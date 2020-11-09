@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { GoogleMap, useLoadScript, Marker, InfoWindow } from '@react-google-maps/api'
+import Link from 'next/link'
 
 import mapStyles from '../lib/MapsStyles'
 import Stores from '../lib/Stores'
@@ -21,10 +22,9 @@ const options = {
     disableDefaultUI: true,
 }
 
-export default function Map({ bag }) {
+export default function Map({ setStore, store }) {
     const [selected, setSelected] = useState(null)
     const { MAPS_KEY } = process.env
-    const { setStore, store } = bag
 
     const { isLoaded, loadError } = useLoadScript({
         googleMapsApiKey: MAPS_KEY,
@@ -65,7 +65,8 @@ export default function Map({ bag }) {
                                 <address>{selected.address}</address>
                                 <address>{selected.address2}</address>
                             </div>
-                            {store !== selected ? (
+
+                            {store.sub != selected.sub ? (
                                 <button
                                     className="setLocationButton"
                                     onClick={() => setStore(selected)}>

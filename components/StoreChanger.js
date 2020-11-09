@@ -1,5 +1,7 @@
 import { useState } from 'react'
+
 import Stores from '../lib/Stores'
+import arrow from '../public/arrow.svg'
 
 export default function StoreInfo({ store, setStore }) {
     const [options, toggleOptions] = useState(false)
@@ -8,7 +10,7 @@ export default function StoreInfo({ store, setStore }) {
         <div className="storeSelection">
             <div className="store">
                 <button className="storeName" onClick={() => toggleOptions(true)}>
-                    {store.sub ? store.sub : 'Store not selected'}
+                    {store.sub ? store.sub : 'Store not selected'} <img src={arrow} alt="" />
                 </button>
                 {options && (
                     <div className="storeOptions">
