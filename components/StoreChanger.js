@@ -9,7 +9,7 @@ export default function StoreInfo({ store, setStore }) {
     return (
         <div className="storeSelection">
             <div className="store">
-                <button className="storeName" onClick={() => toggleOptions(true)}>
+                <button className="storeName" onClick={() => toggleOptions(!options)}>
                     {store.sub ? store.sub : 'Store not selected'} <img src={arrow} alt="" />
                 </button>
                 {options && (
@@ -20,7 +20,7 @@ export default function StoreInfo({ store, setStore }) {
                                     <button
                                         key={location.sub}
                                         onClick={() => {
-                                            toggleOptions(false)
+                                            toggleOptions(!options)
                                             setStore(location)
                                         }}>
                                         {location.sub}
