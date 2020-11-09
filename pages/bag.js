@@ -27,10 +27,7 @@ const Bag = ({ bag }) => {
                     <>
                         <ul>
                             {items.map(item => (
-                                <>
-                                    <BagItem key={item.name} item={item} bag={bag} />
-                                    <hr />
-                                </>
+                                <BagItem key={item.name} item={item} bag={bag} />
                             ))}
                         </ul>
                         <CheckOut price={getTotal()} store={store} setStore={setStore} />
