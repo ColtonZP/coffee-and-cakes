@@ -1,8 +1,10 @@
 import Head from 'next/head'
+import { observer } from 'mobx-react-lite'
 
 import Map from '../components/Map'
 
-export default function FindAStore({ bag }) {
+function FindAStore({ bag }) {
+    const { setStore, store } = bag
     return (
         <div>
             <Head>
@@ -10,8 +12,10 @@ export default function FindAStore({ bag }) {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <main className="stores">
-                <Map bag={bag} />
+                <Map setStore={setStore} store={store} />
             </main>
         </div>
     )
 }
+
+export default observer(FindAStore)
