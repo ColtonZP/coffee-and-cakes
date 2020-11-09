@@ -1,4 +1,6 @@
-export default function CheckOut({ price, store }) {
+import StoreInfo from './StoreChanger'
+
+export default function CheckOut({ price, store, setStore }) {
     const tax = (price * 0.15).toFixed(2)
     const total = (parseFloat(price) + parseFloat(tax)).toFixed(2)
 
@@ -8,15 +10,7 @@ export default function CheckOut({ price, store }) {
                 <span>
                     <b>Pick up at:</b>
                 </span>
-                {store.sub ? (
-                    <>
-                        <span className="sub">{store.sub}</span>
-                        <address>{store.address}</address>
-                        <address>{store.address2}</address>
-                    </>
-                ) : (
-                    <span>No location selected</span>
-                )}
+                <StoreInfo store={store} setStore={setStore} />
             </div>
 
             <span className="subtotal">
