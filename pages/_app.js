@@ -1,3 +1,4 @@
+import React from 'react'
 import '../styles/global.scss'
 import BagState from '../lib/Bag.js'
 import Nav from '../components/nav'
