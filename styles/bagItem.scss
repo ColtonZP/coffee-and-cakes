@@ -1,41 +1,41 @@
 .bagItem {
-    display: flex;
-    align-items: center;
-    padding: 10px 0;
-    border-bottom: 1px solid var(--orange);
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--orange);
 
-    &:last-child {
-        border: none;
+  &:last-child {
+    border: none;
+  }
+
+  & .photo {
+    height: 60px;
+    width: 60px;
+    margin-right: 10px;
+    border-radius: 50%;
+    border: 1px solid var(--orange);
+  }
+
+  & .title {
+    flex-grow: 1;
+  }
+
+  & input {
+    width: 6ch;
+    border: none;
+    outline: none;
+    padding: 5px;
+    border-radius: 10px;
+    margin-left: 5px;
+    background: var(--white);
+  }
+
+  & button {
+    background: none;
+
+    & img {
+      height: 16px;
+      width: 16px;
     }
-
-    & .photo {
-        height: 60px;
-        width: 60px;
-        margin-right: 10px;
-        border-radius: 50%;
-        border: 1px solid var(--orange);
-    }
-
-    & .title {
-        flex-grow: 1;
-    }
-
-    & input {
-        width: 6ch;
-        border: none;
-        outline: none;
-        padding: 5px;
-        border-radius: 10px;
-        margin-left: 5px;
-        background: var(--white);
-    }
-
-    & button {
-        background: none;
-
-        & img {
-            height: 16px;
-            width: 16px;
-        }
-    }
+  }
 }
