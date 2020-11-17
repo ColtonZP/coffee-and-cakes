@@ -1,4 +1,5 @@
 import { observer } from 'mobx-react-lite'
+import { RichText } from 'prismic-reactjs'
 
 import del from '../public/delete.svg'
 
@@ -14,8 +15,9 @@ const BagItem = ({ item, bag }) => {
 
   return (
     <li className="bagItem" key={item}>
-      <img className="photo" src={item.image && item.image.url} alt="" />
-      <span className="title">{item.name}</span>
+      <img className="photo" src={item.picture && item.picture.url} alt="" />
+      <span className="title">{RichText.asText(item.name)}</span>
+
       <span>${item.price}</span>
       <input
         type="number"
@@ -23,7 +25,6 @@ const BagItem = ({ item, bag }) => {
         onChange={e => handleChange(item.name, e)}
         min="0"
       />
-      {/* <span>${(item.price * item.quantity).toFixed(2)}</span> */}
       <button onClick={() => removeItem(item.name)}>
         <img src={del} alt="delete" />
       </button>
