@@ -43,7 +43,8 @@
       }
 
       & .itemImage {
-        max-width: 50%;
+        width: 300px;
+        max-width: 35%;
         object-fit: cover;
         border-radius: 50%;
         border: 5px solid var(--orange);
