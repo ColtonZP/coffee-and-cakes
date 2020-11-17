@@ -1,14 +1,17 @@
 import Head from 'next/head'
+import Prismic from 'prismic-javascript'
+import { RichText } from 'prismic-reactjs'
 
+import { Client } from '../lib/prismic-config'
 import add from '../public/add.svg'
 
 export default function Drinks({ coffee, bag }) {
   const { addItem } = bag
 
   const isBadge = coffee => {
-    const day = new Date(coffee.published_at)
+    const day = new Date(coffee.last_publication_date)
     day.setDate(day.getDate() + 30)
-    if (coffee.seasonal) {
+    if (coffee.data.seasonal) {
       return <span className="badge">Seasonal</span>
     } else if (day >= new Date()) {
       return <span className="badge">New</span>
@@ -25,22 +28,31 @@ export default function Drinks({ coffee, bag }) {
         <h1>Coffee</h1>
         <div className="item-grid">
           {coffee.map(coffee => (
-            <div className="item-card" key={coffee.name}>
-              <img className="photo" src={coffee.image && coffee.image.url} alt={coffee.name} />
+            <div className="item-card" key={coffee.data.name}>
+              <img
+                className="photo"
+                src={coffee.data.picture && coffee.data.picture.url}
+                alt={RichText.asText(coffee.data.name)}
+              />
+
               <h2>
-                {isBadge(coffee)} {coffee.name}
+                {isBadge(coffee)} {RichText.asText(coffee.data.name)}
               </h2>
-              <p>{coffee.description}</p>
+
+              {RichText.render(coffee.data.description)}
+
               <div className="nutrition">
                 <span>
-                  <b>Calories</b> {coffee.calories}
+                  <b>Calories</b> {coffee.data.calories}
                 </span>
                 <span>
-                  <b>Caffeine</b> {coffee.caffeine}mg
+                  <b>Caffeine</b> {coffee.data.caffeine}mg
                 </span>
               </div>
-              <span className="price">${coffee.price.toFixed(2)}</span>
-              <button onClick={() => addItem(coffee)}>
+
+              <span className="price">${coffee.data.price.toFixed(2)}</span>
+
+              <button onClick={() => addItem(coffee.data)}>
                 <img src={add} alt="add" /> <span>Add</span>
               </button>
             </div>
@@ -51,10 +63,13 @@ export default function Drinks({ coffee, bag }) {
   )
 }
 
-export async function getServerSideProps() {
-  const { API_URL } = process.env
-  const res = await fetch(`${API_URL}/coffees`)
-  const coffee = await res.json()
+export async function getServerSideProps(context) {
+  const req = context.req
+  const coffee = await Client(req)
+    .query(Prismic.Predicates.at('document.type', 'coffee'))
+    .then(res => {
+      return res.results
+    })
 
   return { props: { coffee } }
 }
