@@ -1,9 +1,9 @@
 import Head from 'next/head'
+import { RichText } from 'prismic-reactjs'
 
-export default function Home({ ads }) {
-  const topAd = ads.find(ad => ad.Position === 'TOP_AD')
-  const middleAd = ads.find(ad => ad.Position === 'MIDDLE_AD')
-  const bottomAd = ads.find(ad => ad.Position === 'BOTTOM_AD')
+import { Client } from '../lib/prismic-config'
+
+export default function Home({ home }) {
   return (
     <div className="container">
       <Head>
@@ -14,26 +14,26 @@ export default function Home({ ads }) {
       <main>
         <div className="jumbotron">
           <div className="block">
-            <img className="background" src={topAd.Background.url} alt="" />
+            <img className="background" src={home.data.ad_1_background.url} alt="" />
             <div className="ad">
-              <img className="itemImage" src={topAd.coffee.image.url} alt="" />
-              <p>{topAd.Description}</p>
+              <img className="itemImage" src={home.data.ad_1_coffee.url} alt="" />
+              {RichText.render(home.data.ad_1_description)}
             </div>
           </div>
 
           <div className="block">
-            <img className="background" src={middleAd.Background.url} alt="" />
+            <img className="background" src={home.data.ad_2_background.url} alt="" />
             <div className="ad">
-              <img className="itemImage" src={middleAd.coffee.image.url} alt="" />
-              <p>{middleAd.Description}</p>
+              <img className="itemImage" src={home.data.ad_2_coffee.url} alt="" />
+              {RichText.render(home.data.ad_2_description)}
             </div>
           </div>
 
           <div className="block">
-            <img className="background" src={bottomAd.Background.url} alt="" />
+            <img className="background" src={home.data.ad_3_background.url} alt="" />
             <div className="ad">
-              <img className="itemImage" src={bottomAd.coffee.image.url} alt="" />
-              <p>{bottomAd.Description}</p>
+              <img className="itemImage" src={home.data.ad_3_coffee.url} alt="" />
+              {RichText.render(home.data.ad_3_description)}
             </div>
           </div>
         </div>
@@ -56,10 +56,9 @@ export default function Home({ ads }) {
   )
 }
 
-export async function getServerSideProps() {
-  const { API_URL } = process.env
-  const res = await fetch(`${API_URL}/front-page-ads`)
-  const ads = await res.json()
+export async function getServerSideProps(context) {
+  const req = context.req
+  const home = await Client(req).getSingle('home_page')
 
-  return { props: { ads } }
+  return { props: { home } }
 }
