@@ -47,7 +47,7 @@ button {
   padding: 6px 10px;
   outline: none;
   &:active {
-    background: #C4722F;
+    background: #c4722f;
   }
 }
 
@@ -61,6 +61,10 @@ ul {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+img {
+  padding: 0;
 }
 
 .container {
