@@ -4,6 +4,8 @@ import { RichText } from 'prismic-reactjs'
 import { Client } from '../lib/prismic-config'
 
 export default function Home({ home }) {
+
+  console.log(home.data.ad_1_coffee_link)
   return (
     <div className="container">
       <Head>
@@ -56,9 +58,8 @@ export default function Home({ home }) {
   )
 }
 
-export async function getServerSideProps(context) {
-  const req = context.req
-  const home = await Client(req).getSingle('home_page')
+export async function getServerSideProps() {
+  const home = await Client().getSingle('home_page')
 
   return { props: { home } }
 }
