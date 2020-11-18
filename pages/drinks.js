@@ -40,17 +40,17 @@ export default function Drinks({ coffee, bag }) {
                 {isBadge(coffee)} {RichText.asText(coffee.data.name)}
               </h2>
 
-              {RichText.render(coffee.data.description)}
+              {/* {RichText.render(coffee.data.description)} */}
 
               <span className="price">${coffee.data.price.toFixed(2)}</span>
 
-              <button onClick={() => addItem(coffee.data)}>
-                <img src={add} alt="add" /> <span>Add</span>
-              </button>
+              <div className="buttonGroup">
+                <button onClick={() => addItem(coffee.data)}>Add</button>
 
-              <Link href={`/drinks/${coffee.uid}`}>
-                <button onClick={() => addItem(coffee.data)}>More Info</button>
-              </Link>
+                <Link href={`/drinks/${coffee.uid}`}>
+                  <button onClick={() => addItem(coffee.data)}>More Info</button>
+                </Link>
+              </div>
             </div>
           ))}
         </div>

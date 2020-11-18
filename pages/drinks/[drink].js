@@ -3,7 +3,9 @@ import { RichText } from 'prismic-reactjs'
 
 import { Client } from '../../lib/prismic-config'
 
-const Drink = ({ item = null }) => {
+const Drink = ({ item, bag }) => {
+  const { addItem } = bag
+
   return (
     <div className="container">
       <Head>
@@ -15,6 +17,8 @@ const Drink = ({ item = null }) => {
         <img src={item.data.picture.url} alt="" />
         {RichText.render(item.data.name)}
         {RichText.render(item.data.description)}
+
+        <button onClick={() => addItem(item.data)}>Add</button>
 
         <div className="nutrition">
           <h3>Nutrition</h3>
