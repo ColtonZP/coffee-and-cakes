@@ -43,9 +43,8 @@
       }
 
       & .item-image {
-        width: 35%;
-        max-width: 300px;
-        height: auto;
+        width: 150px;
+        height: 150px;
         object-fit: cover;
         border-radius: 50%;
         border: 5px solid var(--orange);
@@ -57,6 +56,12 @@
 
         & p {
           font-size: 28px;
+        }
+
+        & .item-image {
+          width: 35%;
+          max-width: 300px;
+          height: auto;
         }
       }
     }
