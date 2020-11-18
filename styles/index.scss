@@ -45,6 +45,7 @@
       & .item-image {
         width: 35%;
         max-width: 300px;
+        height: auto;
         object-fit: cover;
         border-radius: 50%;
         border: 5px solid var(--orange);
