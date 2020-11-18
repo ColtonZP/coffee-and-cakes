@@ -42,13 +42,13 @@
         padding: var(--spacing);
       }
 
-      & .itemImage {
+      & .item-image {
         width: 35%;
         max-width: 300px;
         object-fit: cover;
         border-radius: 50%;
         border: 5px solid var(--orange);
-        margin: var(--spacing);
+        // margin: var(--spacing);
       }
 
       @media screen and (min-width: 510px) {

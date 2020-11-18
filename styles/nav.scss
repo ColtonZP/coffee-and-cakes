@@ -20,17 +20,6 @@ nav {
 
 .mobile {
   & .links {
-    & a {
-      // margin-right: 48px;
-      font-size: 32px;
-      font-weight: 500;
-      position: relative;
-      margin: 16px 0;
-      display: block;
-    }
-  }
-
-  & .links {
     position: fixed;
     top: 0;
     left: 0;
@@ -39,6 +28,20 @@ nav {
     background: var(--white);
     padding: 50px 2rem 0;
     overflow: scroll;
+
+    & a {
+      // margin-right: 48px;
+      font-size: 32px;
+      font-weight: 500;
+      position: relative;
+      margin: 16px 0;
+      display: block;
+    }
+
+    & .right-menu {
+      display: flex;
+      flex-direction: column;
+    }
   }
 
   .menu-bars {
@@ -106,6 +109,7 @@ nav {
 
     & .right-menu {
       margin-left: auto;
+
       & a:last-child {
         margin-right: 0;
       }
