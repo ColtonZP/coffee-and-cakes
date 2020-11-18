@@ -2,7 +2,7 @@
   display: grid;
   grid-gap: 2rem;
   grid-template-columns: repeat(1, 1fr);
-  margin-top: var(--spacing);
+  margin: var(--spacing) 0;
 
   & .block {
     position: relative;

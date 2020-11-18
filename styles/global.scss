@@ -17,7 +17,7 @@
   --blue: #7794ca;
   --orange: #e18335;
 
-  --s-spacing: 10px;
+  --s-spacing: 12px;
   --spacing: 24px;
   --x-spacing: 48px;
   --xl-spacing: 96px;
@@ -44,6 +44,9 @@ button {
   cursor: pointer;
   padding: 6px 10px;
   outline: none;
+  &:active {
+    background: #C4722F;
+  }
 }
 
 ul {
