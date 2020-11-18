@@ -7,7 +7,6 @@
   & .block {
     position: relative;
     background: white;
-    // height: 35vh;
     border-radius: var(--round);
     overflow: hidden;
 
@@ -33,13 +32,14 @@
       align-items: center;
       justify-content: center;
       height: 100%;
-      // padding: var(--spacing);
 
       & p {
         font-size: 22px;
         text-align: center;
         flex-grow: 1;
-        padding: var(--spacing);
+        margin: var(--spacing);
+        margin-top: 0;
+        font-weight: bold;
       }
 
       & .item-image {
@@ -56,6 +56,7 @@
 
         & p {
           font-size: 28px;
+          margin-top: var(--spacing);
         }
 
         & .item-image {
