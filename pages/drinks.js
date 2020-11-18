@@ -42,22 +42,14 @@ export default function Drinks({ coffee, bag }) {
 
               {RichText.render(coffee.data.description)}
 
-              <div className="nutrition">
-                <span>
-                  <b>Calories</b> {coffee.data.calories}
-                </span>
-                <span>
-                  <b>Caffeine</b> {coffee.data.caffeine}mg
-                </span>
-              </div>
-
               <span className="price">${coffee.data.price.toFixed(2)}</span>
 
               <button onClick={() => addItem(coffee.data)}>
                 <img src={add} alt="add" /> <span>Add</span>
               </button>
+
               <Link href={`/drinks/${coffee.uid}`}>
-                <a>More info</a>
+                <button onClick={() => addItem(coffee.data)}>More Info</button>
               </Link>
             </div>
           ))}
