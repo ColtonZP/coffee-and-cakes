@@ -27,9 +27,9 @@ export default function Drinks({ coffee, bag }) {
       </Head>
       <main className="drinks">
         <h1>Coffee</h1>
-        <div className="item-grid">
+        <div className="itemGrid">
           {coffee.map(coffee => (
-            <div className="item-card" key={coffee.data.name}>
+            <div className="itemCard" key={coffee.data.name}>
               <img
                 className="photo"
                 src={coffee.data.picture && coffee.data.picture.url}

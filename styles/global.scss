@@ -7,7 +7,6 @@
 
 * {
   box-sizing: border-box;
-  font-size: 16px;
   margin: 0;
   padding: 0;
 }
@@ -18,11 +17,11 @@
   --blue: #7794ca;
   --orange: #e18335;
 
-  --xs-spacing: 6px;
-  --s-spacing: 12px;
-  --spacing: 24px;
-  --x-spacing: 48px;
-  --xl-spacing: 96px;
+  --xs-spacing: 5px;
+  --s-spacing: 10px;
+  --spacing: 20px;
+  --l-spacing: 40px;
+  --xl-spacing: 80px;
 
   --round: 10px;
 }
@@ -31,6 +30,7 @@ html,
 body {
   padding: 0;
   margin: 0;
+  font-size: 10px;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell,
     Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
@@ -42,9 +42,10 @@ body {
 button {
   background: var(--orange);
   border: none;
-  border-radius: 10px;
+  border-radius: var(--round);
   cursor: pointer;
-  padding: 6px 10px;
+  padding: var(--xs-spacing) var(--s-spacing);
+  font-size: 1.6em;
   outline: none;
   &:active {
     background: #c4722f;
@@ -70,7 +71,7 @@ img {
 .container {
   max-width: 1550px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 var(--l-spacing);
 }
 
 // ! temp

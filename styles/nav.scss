@@ -1,5 +1,5 @@
 nav {
-  padding: 15px 0;
+  padding: var(--spacing) 0;
   box-shadow: 0 4px 10px -10px rgba(0, 0, 0, 0.6);
   position: sticky;
   top: 0;
@@ -11,8 +11,7 @@ nav {
     flex-direction: column;
 
     & a {
-      margin-right: 48px;
-      font-size: 20px;
+      margin-right: var(--l-spacing);
       font-weight: 500;
     }
   }
@@ -26,25 +25,24 @@ nav {
     width: 100vw;
     height: 100vh;
     background: var(--white);
-    padding: 50px 2rem 0;
+    padding: 70px var(--l-spacing) 0;
     overflow: scroll;
 
     & a {
-      // margin-right: 48px;
-      font-size: 32px;
+      font-size: 3em;
       font-weight: 500;
       position: relative;
-      margin: 16px 0;
+      margin: var(--spacing) 0;
       display: block;
     }
 
-    & .right-menu {
+    & .rightMenu {
       display: flex;
       flex-direction: column;
     }
   }
 
-  .menu-bars {
+  .menuBars {
     width: 35px;
     height: 35px;
     margin: 0 0 auto 0;
@@ -107,7 +105,11 @@ nav {
   & .links {
     flex-direction: row;
 
-    & .right-menu {
+    & a {
+      font-size: 2em;
+    }
+
+    & .rightMenu {
       margin-left: auto;
 
       & a:last-child {

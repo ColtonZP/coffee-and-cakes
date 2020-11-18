@@ -1,33 +1,26 @@
 .drinks {
-  margin: 2rem 0;
+  margin: var(--l-spacing) 0;
 
   & h1 {
-    font-size: 3em;
-    margin: 0 0 2rem;
+    font-size: 5em;
+    margin: 0 0 var(--l-spacing);
     font-weight: 600;
   }
 
-  & .item-grid {
+  & .itemGrid {
     display: grid;
-    grid-gap: 2rem;
+    grid-gap: var(--l-spacing) var(--spacing);
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
 
-    & .item-card {
+    & .itemCard {
       display: flex;
       flex-direction: column;
-      border-radius: 10px;
+      border-radius: var(--round);
       position: relative;
-      padding: 75px 10px 10px;
+      padding: 75px var(--spacing) var(--spacing);
       margin-top: 75px;
       background: white;
       border: 2px solid var(--orange);
-
-      & h2,
-      & p,
-      & .nutrition,
-      & .price {
-        margin: 10px 0;
-      }
 
       & .photo {
         height: 150px;
@@ -43,18 +36,18 @@
 
       & h2 {
         margin: var(--spacing) 0 0 0;
-        font-size: 20px;
+        font-size: 2em;
         text-align: center;
 
         & .badge {
           color: var(--orange);
-          font-size: 20px;
         }
       }
 
       .price {
-        font-weight: bold;
-        margin: 0 0 var(--spacing);
+        font-size: 1.4em;
+        // font-weight: normal;
+        margin: var(--s-spacing) 0 var(--spacing);
         text-align: center;
         flex-grow: 1;
       }
@@ -62,14 +55,15 @@
       .buttonGroup {
         display: flex;
         flex-direction: row;
-        gap: 2px;
         overflow: hidden;
+        justify-content: space-between;
         border-radius: var(--round);
 
         & button {
-          display: flex;
-          justify-content: center;
-          flex-grow: 1;
+          // display: flex;
+          // justify-content: center;
+          // flex-grow: 1;
+          width: calc(50% - 1px);
           border-radius: 0;
         }
       }

@@ -12,7 +12,7 @@ export default function Links({ toggleMenu }) {
       <Link href="/food">
         <a onClick={() => toggleMenu && toggleMenu(false)}>Food</a>
       </Link>
-      <div className="right-menu">
+      <div className="rightMenu">
         <Link href="/find-a-store">
           <a onClick={() => toggleMenu && toggleMenu(false)}>Find a store</a>
         </Link>

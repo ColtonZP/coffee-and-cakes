@@ -18,7 +18,7 @@ export default function Home({ home }) {
           <div className="block">
             <img className="background" src={home.data.ad_1_background.url} alt="" />
             <div className="ad">
-              <img className="item-image" src={home.data.ad_1_coffee.url} alt="" />
+              <img className="itemImage" src={home.data.ad_1_coffee.url} alt="" />
               {RichText.render(home.data.ad_1_description)}
             </div>
           </div>
@@ -26,7 +26,7 @@ export default function Home({ home }) {
           <div className="block">
             <img className="background" src={home.data.ad_2_background.url} alt="" />
             <div className="ad">
-              <img className="item-image" src={home.data.ad_2_coffee.url} alt="" />
+              <img className="itemImage" src={home.data.ad_2_coffee.url} alt="" />
               {RichText.render(home.data.ad_2_description)}
             </div>
           </div>
@@ -34,7 +34,7 @@ export default function Home({ home }) {
           <div className="block">
             <img className="background" src={home.data.ad_3_background.url} alt="" />
             <div className="ad">
-              <img className="item-image" src={home.data.ad_3_coffee.url} alt="" />
+              <img className="itemImage" src={home.data.ad_3_coffee.url} alt="" />
               {RichText.render(home.data.ad_3_description)}
             </div>
           </div>

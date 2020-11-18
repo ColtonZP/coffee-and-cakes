@@ -9,7 +9,7 @@ export default function Nav() {
       <div className="mobile">
         <div className="container">
           {/* toggle class active if pressed, change to button */}
-          <button className={`menu-bars ${menu && 'active'}`} onClick={() => toggleMenu(!menu)}>
+          <button className={`menuBars ${menu && 'active'}`} onClick={() => toggleMenu(!menu)}>
             <div className="top bar"></div>
             <div className="middle bar"></div>
             <div className="bottom bar"></div>
