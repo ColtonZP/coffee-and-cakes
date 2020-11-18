@@ -1,5 +1,6 @@
 @import 'index.scss';
-@import 'items.scss';
+@import 'drinks.scss';
+@import 'item.scss';
 @import 'nav.scss';
 @import 'bag.scss';
 @import 'bagItem.scss';
@@ -17,6 +18,7 @@
   --blue: #7794ca;
   --orange: #e18335;
 
+  --xs-spacing: 6px;
   --s-spacing: 12px;
   --spacing: 24px;
   --x-spacing: 48px;
