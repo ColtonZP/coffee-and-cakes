@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Link from 'next/link'
 import Prismic from 'prismic-javascript'
 import { RichText } from 'prismic-reactjs'
 
@@ -55,6 +56,9 @@ export default function Drinks({ coffee, bag }) {
               <button onClick={() => addItem(coffee.data)}>
                 <img src={add} alt="add" /> <span>Add</span>
               </button>
+              <Link href={`/drinks/${coffee.uid}`}>
+                <a>More info</a>
+              </Link>
             </div>
           ))}
         </div>
@@ -63,13 +67,8 @@ export default function Drinks({ coffee, bag }) {
   )
 }
 
-export async function getServerSideProps(context) {
-  const req = context.req
-  const coffee = await Client(req)
-    .query(Prismic.Predicates.at('document.type', 'coffee'))
-    .then(res => {
-      return res.results
-    })
+export async function getServerSideProps() {
+  const coffee = await Client().query(Prismic.Predicates.at('document.type', 'coffee'))
 
-  return { props: { coffee } }
+  return { props: { coffee: coffee.results } }
 }
