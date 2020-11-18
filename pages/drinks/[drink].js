@@ -15,15 +15,32 @@ const Drink = ({ item, bag }) => {
 
       <main className="item">
         <img src={item.data.picture.url} alt="" />
-        {RichText.render(item.data.name)}
-        {RichText.render(item.data.description)}
 
-        <button onClick={() => addItem(item.data)}>Add</button>
+        <div className="info">
+          {RichText.render(item.data.name)}
+          {RichText.render(item.data.description)}
+          <button onClick={() => addItem(item.data)}>Add to order</button>
+        </div>
 
         <div className="nutrition">
           <h3>Nutrition</h3>
           <span>
             <b>Calories</b> {item.data.calories}
+          </span>
+          <span>
+            <b>Fat</b> {item.data.calories}g
+          </span>
+          <span>
+            <b>Cholesterol</b> {item.data.calories}mg
+          </span>
+          <span>
+            <b>Sodium</b> {item.data.calories}mg
+          </span>
+          <span>
+            <b>Carbohydrates</b> {item.data.calories}g
+          </span>
+          <span>
+            <b>Protein</b> {item.data.calories}mg
           </span>
           <span>
             <b>Caffeine</b> {item.data.caffeine}mg

@@ -48,7 +48,7 @@ export default function Drinks({ coffee, bag }) {
                 <button onClick={() => addItem(coffee.data)}>Add</button>
 
                 <Link href={`/drinks/${coffee.uid}`}>
-                  <button onClick={() => addItem(coffee.data)}>More Info</button>
+                  <button>More Info</button>
                 </Link>
               </div>
             </div>
