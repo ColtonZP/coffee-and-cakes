@@ -4,6 +4,7 @@
 @import 'nav.scss';
 @import 'bag.scss';
 @import 'bagItem.scss';
+@import 'stores.scss';
 
 * {
   box-sizing: border-box;
@@ -76,13 +77,4 @@ img {
 
 // ! temp
 
-.stores {
-  height: 100vh;
-  width: 100vw;
-  position: absolute;
-  top: 0;
-}
 
-.address {
-  margin: var(--s-spacing) 0;
-}
