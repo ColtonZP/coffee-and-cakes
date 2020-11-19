@@ -16,18 +16,25 @@ const BagItem = ({ item, bag }) => {
   return (
     <li className="bagItem" key={item}>
       <img className="photo" src={item.picture && item.picture.url} alt="" />
-      <span className="title">{RichText.asText(item.name)}</span>
+      <div className="text">
+        <div className="info">
+          <span className="title">{RichText.asText(item.name)}</span>
+          <span className="price">${item.price}</span>
+        </div>
 
-      <span>${item.price}</span>
-      <input
-        type="number"
-        value={item.quantity}
-        onChange={e => handleChange(item.name, e)}
-        min="0"
-      />
-      <button onClick={() => removeItem(item.name)}>
-        <img src={del} alt="delete" />
-      </button>
+        <div className="quantity">
+          <span>QTY:</span>
+          <input
+            type="number"
+            value={item.quantity}
+            onChange={e => handleChange(item.name, e)}
+            min="0"
+          />
+          <button onClick={() => removeItem(item.name)}>
+            <img src={del} alt="delete" />
+          </button>
+        </div>
+      </div>
     </li>
   )
 }

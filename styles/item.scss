@@ -17,7 +17,7 @@
     flex-direction: column;
     margin: var(--spacing) 0;
 
-    @media screen and (min-width: 510px) {
+    @media screen and (min-width: 540px) {
       margin: 0 var(--spacing);
     }
 
@@ -54,7 +54,7 @@
     }
   }
 
-  @media screen and (min-width: 510px) {
+  @media screen and (min-width: 540px) {
     flex-direction: row;
 
     & img,
