@@ -1,0 +1,39 @@
+.submit {
+  margin-top: var(--spacing);
+
+  & label,
+  & input {
+  }
+
+  & .card {
+    display: flex;
+    flex-wrap: wrap;
+    & .cardNumber {
+      flex-grow: 1;
+    }
+    & .info {
+      display: flex;
+      justify-content: space-between;
+      flex-grow: 1;
+      & .cvv, & .expiration {
+        width: calc(50% - 2px)
+      }
+    }
+  }
+
+  & .format {
+    display: inline !important;
+    font-size: 1rem;
+  }
+
+  & input {
+    display: block;
+    width: 100%;
+    border-radius: var(--round);
+    border: none;
+    padding: var(--s-spacing);
+    font-size: 1.6rem;
+    outline: none;
+    margin: var(--xs-spacing) 0 var(--s-spacing);
+  }
+}

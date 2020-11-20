@@ -1,6 +1,11 @@
+import { useState } from 'react'
+
+import SubmitOrder from './SubmitOrder'
 import StoreInfo from './StoreChanger'
 
 export default function CheckOut({ price, store, setStore }) {
+  const [submit, toggleSubmit] = useState(true)
+
   const tax = (price * 0.15).toFixed(2)
   const total = (parseFloat(price) + parseFloat(tax)).toFixed(2)
 
@@ -22,7 +27,13 @@ export default function CheckOut({ price, store, setStore }) {
       <span className="total">
         <b>Total:</b> <span className="price">${total}</span>
       </span>
-      <button className="checkOutButton">Check Out</button>
+      {submit ? (
+        <SubmitOrder price={total} toggleSubmit={toggleSubmit} />
+      ) : (
+        <button className="checkOutButton" onClick={() => toggleSubmit(true)}>
+          Check Out
+        </button>
+      )}
     </div>
   )
 }

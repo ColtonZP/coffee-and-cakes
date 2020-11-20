@@ -5,6 +5,7 @@
 @import 'bag.scss';
 @import 'bagItem.scss';
 @import 'stores.scss';
+@import 'submit.scss';
 
 * {
   box-sizing: border-box;
@@ -73,6 +74,7 @@ img {
   max-width: 1550px;
   margin: 0 auto;
   padding: 0 var(--l-spacing);
+  position: relative;
 }
 
 // ! temp
