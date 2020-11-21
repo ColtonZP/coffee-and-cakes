@@ -1,8 +1,7 @@
 import { useState, createRef } from 'react'
 
 export default function CheckOut({ toggleSubmit }) {
-  const [firstName, changeFistName] = useState('')
-  const [lastName, changeLastName] = useState('')
+  const [nameOnCard, changeName] = useState('')
   const [cardNumber, changeCardNumber] = useState('')
   const [expiration, changeExpiration] = useState('')
   const [cvv, changeCvv] = useState('')
@@ -46,25 +45,15 @@ export default function CheckOut({ toggleSubmit }) {
   return (
     <div className="submit">
       <form onSubmit={handleSubmit}>
-        <label htmlFor="firstName">First Name:</label>
+        <label htmlFor="firstName">Name On Card:</label>
         <input
           id="firstName"
           type="text"
           name="firstName"
           minLength="3"
-          placeholder="John"
-          value={firstName}
-          onChange={e => changeFistName(e.target.value)}
-        />
-
-        <label htmlFor="lastName">Last Name:</label>
-        <input
-          type="text"
-          name="lastName"
-          minLength="3"
-          placeholder="Smith"
-          value={lastName}
-          onChange={e => changeLastName(e.target.value)}
+          placeholder="John Smith"
+          value={nameOnCard}
+          onChange={e => changeName(e.target.value)}
         />
 
         <div className="card">
