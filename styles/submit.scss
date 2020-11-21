@@ -8,9 +8,11 @@
   & .card {
     display: flex;
     flex-wrap: wrap;
+
     & .cardNumber {
       flex-grow: 1;
       position: relative;
+
       & .cardType {
         position: absolute;
         right: var(--s-spacing);
@@ -19,15 +21,18 @@
         // height: 1.8rem;
         border: 1px grey solid;
         border-radius: 5px;
-        padding: .2em var(--xs-spacing);
+        padding: 0.2em var(--xs-spacing);
       }
     }
+
     & .info {
       display: flex;
       justify-content: space-between;
       flex-grow: 1;
-      & .cvv, & .expiration {
-        width: calc(50% - 2px)
+
+      & .cvv,
+      & .expiration {
+        width: calc(50% - 2px);
       }
     }
   }
@@ -46,5 +51,47 @@
     font-size: 1.6rem;
     outline: none;
     margin: var(--xs-spacing) 0 var(--s-spacing);
+  }
+
+  & .error,
+  & .disclaimer {
+    color: black !important;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  & .disclaimer:first-of-type {
+    margin-top: 10px;
+  }
+
+  & .loadingDiv {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    & span {
+      color: white;
+      font-size: 1.2em;
+      font-weight: bold;
+    }
+
+    & .loadingImg {
+      width: 80px;
+      height: 80px;
+      animation: rotate 1s linear infinite;
+    }
+  }
+
+  @keyframes rotate {
+    to {
+      transform: rotate(360deg);
+    }
   }
 }

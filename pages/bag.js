@@ -6,7 +6,7 @@ import BagItem from '../components/BagItem'
 import CheckOut from '../components/CheckOut'
 
 const Bag = ({ bag }) => {
-  const { items, store, setStore } = bag
+  const { items, store, setStore, clearBag } = bag
 
   const getTotal = () => {
     let price = 0
@@ -31,7 +31,7 @@ const Bag = ({ bag }) => {
                 <BagItem key={RichText.asText(item.name)} item={item} bag={bag} />
               ))}
             </ul>
-            <CheckOut price={getTotal()} store={store} setStore={setStore} />
+            <CheckOut price={getTotal()} store={store} setStore={setStore} clearBag={clearBag} />
           </>
         ) : (
           <div>

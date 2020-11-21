@@ -1,16 +1,40 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
-export default function CheckOut({ toggleSubmit }) {
+import loading from '../public/loading.svg'
+
+export default function CheckOut({ toggleSubmit, clearBag }) {
   const [nameOnCard, changeName] = useState('')
   const [cardNumber, changeCardNumber] = useState('')
   const [expiration, changeExpiration] = useState('')
   const [cvv, changeCvv] = useState('')
+  const [error, changeError] = useState(null)
+  const [submitting, toggleSubmitting] = useState(false)
+
+  useEffect(() => {
+    submitting &&
+      setTimeout(() => {
+        clearBag()
+      }, 5000)
+  })
 
   const handleSubmit = e => {
     e.preventDefault()
-    console.log(cardType)
     const cardType = testCards(cardNumber)
-    console.log(cardType ? cardType : 'No card found')
+    if (!nameOnCard.match(/\s[a-zA-Z]/g)) {
+      changeError('Name')
+    } else if (!cardType) {
+      changeError('Card')
+    } else if (expiration.length < 4) {
+      changeError('Expiration')
+    } else if (
+      (cardType !== 'AMEX' && cvv.length !== 3) ||
+      (cardType === 'AMEX' && cvv.length !== 4)
+    ) {
+      changeError('CVV')
+    } else {
+      changeError(null)
+      toggleSubmitting(true)
+    }
   }
 
   return (
@@ -70,11 +94,20 @@ export default function CheckOut({ toggleSubmit }) {
           </div>
         </div>
 
+        {error && <span className="error">** Invalid {error} **</span>}
         <button className="checkOutButton">Submit</button>
         <button className="checkOutButton" onClick={() => toggleSubmit(false)}>
           Cancel
         </button>
+        <span className="disclaimer">** FOR DEMO ONLY **</span>
+        <span className="disclaimer">** DOES NOT CHARGE CARD **</span>
       </form>
+      {submitting && (
+        <div className="loadingDiv">
+          <span>Submitting</span>
+          <img className="loadingImg" src={loading} alt="loading" />
+        </div>
+      )}
     </div>
   )
 }
@@ -85,7 +118,6 @@ const amEx = /^3[47][0-9]{13}$/
 const formatNumber = numbers => {
   let formatted = numbers.match(/.{1,4}/g)
   if (testCards(numbers) === 'AMEX') {
-    console.log("it's amex")
     return `${numbers.substring(0, 4)} ${numbers.substring(4, 11)} ${numbers.substring(
       11,
       numbers.length,
