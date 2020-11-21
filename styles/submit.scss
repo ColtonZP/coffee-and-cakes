@@ -10,6 +10,17 @@
     flex-wrap: wrap;
     & .cardNumber {
       flex-grow: 1;
+      position: relative;
+      & .cardType {
+        position: absolute;
+        right: var(--s-spacing);
+        bottom: var(--spacing);
+        font-size: 1rem;
+        // height: 1.8rem;
+        border: 1px grey solid;
+        border-radius: 5px;
+        padding: .2em var(--xs-spacing);
+      }
     }
     & .info {
       display: flex;

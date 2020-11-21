@@ -38,6 +38,7 @@ export default function CheckOut({ toggleSubmit }) {
               value={formatNumber(cardNumber)}
               onChange={e => changeCardNumber(trim(e.target.value))}
             />
+            {testCards(cardNumber) && <span className="cardType">{testCards(cardNumber)}</span>}
           </div>
 
           <div className="info">
@@ -83,17 +84,23 @@ const amEx = /^3[47][0-9]{13}$/
 
 const formatNumber = numbers => {
   let formatted = numbers.match(/.{1,4}/g)
-  if (formatted) {
+  if (testCards(numbers) === 'AMEX') {
+    console.log("it's amex")
+    return `${numbers.substring(0, 4)} ${numbers.substring(4, 11)} ${numbers.substring(
+      11,
+      numbers.length,
+    )}`
+  } else if (formatted) {
     return formatted.join(' ')
   } else return ''
 }
 
 const testCards = value => {
   if (visa.test(value)) {
-    return 'visa'
+    return 'VISA'
   } else if (amEx.test(value)) {
-    return 'amex'
-  } else return false
+    return 'AMEX'
+  } else return null
 }
 
 const handleDateChange = date => {
