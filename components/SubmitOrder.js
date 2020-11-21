@@ -1,39 +1,10 @@
-import { useState, createRef } from 'react'
+import { useState } from 'react'
 
 export default function CheckOut({ toggleSubmit }) {
   const [nameOnCard, changeName] = useState('')
   const [cardNumber, changeCardNumber] = useState('')
   const [expiration, changeExpiration] = useState('')
   const [cvv, changeCvv] = useState('')
-
-  const visa = /^4[0-9]{12}(?:[0-9]{3})?$/
-  const amEx = /^3[47][0-9]{13}$/
-
-  const formatNumber = numbers => {
-    let formatted = numbers.match(/.{1,4}/g)
-    if (formatted) {
-      return formatted.join(' ')
-    } else return ''
-  }
-
-  const formatExpiration = numbers => {
-    let formatted = numbers.match(/.{1,2}/g)
-    if (formatted) {
-      return formatted.join(' / ')
-    } else return ''
-  }
-
-  const trim = numbers => {
-    return numbers.replace(/[^0-9]/g, '')
-  }
-
-  const testCards = value => {
-    if (visa.test(value)) {
-      return 'visa'
-    } else if (amEx.test(value)) {
-      return 'amex'
-    } else return false
-  }
 
   const handleSubmit = e => {
     e.preventDefault()
@@ -80,7 +51,7 @@ export default function CheckOut({ toggleSubmit }) {
                 placeholder="MM / YY"
                 maxLength="7"
                 value={formatExpiration(expiration)}
-                onChange={e => changeExpiration(trim(e.target.value))}
+                onChange={e => changeExpiration(handleDateChange(e.target.value))}
               />
             </div>
 
@@ -105,4 +76,46 @@ export default function CheckOut({ toggleSubmit }) {
       </form>
     </div>
   )
+}
+
+const visa = /^4[0-9]{12}(?:[0-9]{3})?$/
+const amEx = /^3[47][0-9]{13}$/
+
+const formatNumber = numbers => {
+  let formatted = numbers.match(/.{1,4}/g)
+  if (formatted) {
+    return formatted.join(' ')
+  } else return ''
+}
+
+const testCards = value => {
+  if (visa.test(value)) {
+    return 'visa'
+  } else if (amEx.test(value)) {
+    return 'amex'
+  } else return false
+}
+
+const handleDateChange = date => {
+  const trimmedDate = trim(date)
+  if (trimmedDate.substring(0, 2) > 12) {
+    return `1`
+  } else if (trimmedDate.substring(0, 1) > 1 && trimmedDate.substring(0, 1) < 10) {
+    return `0${trimmedDate}`
+  } else if (date.substring(1, 2).match(/[^0-9]/g) && date.substring(0, 1) === '1') {
+    return `01`
+  }
+  return trimmedDate
+}
+
+const trim = numbers => {
+  return numbers.replace(/[^0-9]/g, '')
+}
+
+const formatExpiration = date => {
+  let formatted = date.match(/.{1,2}/g)
+
+  if (formatted) {
+    return formatted.join(' / ')
+  } else return date
 }
