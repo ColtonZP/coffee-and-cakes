@@ -4,7 +4,6 @@ import { RichText } from 'prismic-reactjs'
 import { Client } from '../lib/prismic-config'
 
 export default function Home({ home }) {
-  console.log(home.data.ad_1_coffee_link)
   return (
     <div className="container">
       <Head>

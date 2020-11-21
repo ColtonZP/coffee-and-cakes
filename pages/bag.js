@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import { observer } from 'mobx-react-lite'
+import { RichText } from 'prismic-reactjs'
 
 import BagItem from '../components/BagItem'
 import CheckOut from '../components/CheckOut'
@@ -27,7 +28,7 @@ const Bag = ({ bag }) => {
           <>
             <ul>
               {items.map(item => (
-                <BagItem key={item.name} item={item} bag={bag} />
+                <BagItem key={RichText.asText(item.name)} item={item} bag={bag} />
               ))}
             </ul>
             <CheckOut price={getTotal()} store={store} setStore={setStore} />

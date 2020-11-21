@@ -29,7 +29,7 @@ export default function Drinks({ coffee, bag }) {
         <h1>Coffee</h1>
         <div className="itemGrid">
           {coffee.map(coffee => (
-            <div className="itemCard" key={coffee.data.name}>
+            <div className="itemCard" key={RichText.asText(coffee.data.name)}>
               <img
                 className="photo"
                 src={coffee.data.picture && coffee.data.picture.url}
