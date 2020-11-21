@@ -24,6 +24,10 @@ export default function CheckOut({ toggleSubmit }) {
     } else return ''
   }
 
+  const trim = numbers => {
+    return numbers.replace(/[^0-9]/g, '')
+  }
+
   const testCards = value => {
     if (visa.test(value)) {
       return 'visa'
@@ -72,7 +76,7 @@ export default function CheckOut({ toggleSubmit }) {
               maxLength="19"
               placeholder="1234 1234 1234 1234"
               value={formatNumber(cardNumber)}
-              onChange={e => changeCardNumber(e.target.value.replace(/[a-zA-Z ]/g, ''))}
+              onChange={e => changeCardNumber(trim(e.target.value))}
             />
           </div>
 
@@ -87,13 +91,20 @@ export default function CheckOut({ toggleSubmit }) {
                 placeholder="MM / YY"
                 maxLength="7"
                 value={formatExpiration(expiration)}
-                onChange={e => changeExpiration(e.target.value.replace(/[a-zA-Z /]/g, ''))}
+                onChange={e => changeExpiration(trim(e.target.value))}
               />
             </div>
 
             <div className="cvv">
               <label htmlFor="cvv">CVV</label>
-              <input type="number" name="cvv" placeholder="123" maxLength="4" />
+              <input
+                type="text"
+                name="cvv"
+                placeholder="123"
+                maxLength="4"
+                value={cvv}
+                onChange={e => changeCvv(trim(e.target.value))}
+              />
             </div>
           </div>
         </div>
