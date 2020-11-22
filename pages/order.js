@@ -27,11 +27,11 @@ const Bag = ({ bag }) => {
       <main className="order">
         {order.length > 0 ? (
           <>
-            <h1>Order Placed</h1>
+            <h1>Order Placed!</h1>
             <ul>
               {order.map(item => (
-                <div className="item" key={RichText.asText(item.name)}>
-                  <img src={item.picture.url} alt=""/>
+                <div className="orderItem" key={RichText.asText(item.name)}>
+                  <img src={item.picture.url} alt={RichText.asText(item.name)} />
                   <span>
                     {RichText.asText(item.name)} x{item.quantity}
                   </span>

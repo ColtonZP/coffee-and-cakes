@@ -23,16 +23,17 @@ const Bag = ({ bag }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="bag">
+      <main>
+        <h1>Order Placed!</h1>
         {items.length > 0 ? (
-          <>
+          <div className="bag">
             <ul>
               {items.map(item => (
                 <BagItem key={RichText.asText(item.name)} item={item} bag={bag} />
               ))}
             </ul>
             <CheckOut price={getTotal()} store={store} setStore={setStore} clearBag={clearBag} />
-          </>
+          </div>
         ) : (
           <div>
             <span>Bag Empty</span>

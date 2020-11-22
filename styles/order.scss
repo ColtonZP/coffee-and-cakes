@@ -1,0 +1,38 @@
+.order {
+  padding: var(--l-spacing) 0;
+
+  & h1 {
+    font-size: 4rem;
+  }
+
+  & ul {
+    background-color: white;
+    border-radius: var(--round);
+    padding: 0 var(--spacing);
+    margin: var(--spacing) 0;
+
+    & .orderItem {
+      display: flex;
+      align-items: center;
+      padding: var(--spacing) 0;
+      border-bottom: 2px solid var(--orange);
+
+      &:last-child {
+        border: none;
+      }
+
+      & img {
+        height: 40px;
+        width: 40px;
+        margin-right: var(--s-spacing);
+        border-radius: 50%;
+        border: 2px solid var(--orange);
+        align-self: center;
+      }
+
+      & span {
+        font-size: 1.6em;
+      }
+    }
+  }
+}
