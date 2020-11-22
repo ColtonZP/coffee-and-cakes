@@ -116,8 +116,15 @@ export default function CheckOut({ toggleSubmit, clearBag, store }) {
   )
 }
 
-const visa = /^4[0-9]{12}(?:[0-9]{3})?$/
-const amEx = /^3[47][0-9]{13}$/
+const VISA = { name: 'VISA', value: /^4[0-9]{12}(?:[0-9]{3})?$/ }
+const AMEX = { name: 'AMEX', value: /^3[47][0-9]{13}$/ }
+const MASTER = {
+  name: 'MASTER',
+  value: /^(?:5[1-5][0-9]{2}|222[1-9]|22[3-9][0-9]|2[3-6][0-9]{2}|27[01][0-9]|2720)[0-9]{12}$/,
+}
+const DISCOVER = { name: 'DISCOVER', value: /^3(?:0[0-5]|[68][0-9])[0-9]{11}$/ }
+
+const cards = [VISA, AMEX, MASTER, DISCOVER]
 
 const formatNumber = numbers => {
   let formatted = numbers.match(/.{1,4}/g)
@@ -132,11 +139,14 @@ const formatNumber = numbers => {
 }
 
 const testCards = value => {
-  if (visa.test(value)) {
-    return 'VISA'
-  } else if (amEx.test(value)) {
-    return 'AMEX'
-  } else return null
+  let type = null
+  cards.forEach(card => {
+    if (card.value.test(value)) {
+      type = card.name
+    }
+  })
+
+  return type
 }
 
 const handleDateChange = date => {
