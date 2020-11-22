@@ -24,16 +24,18 @@ const Bag = ({ bag }) => {
       </Head>
 
       <main className="bagPage">
-        <h1>Bag</h1>
         {items.length > 0 ? (
-          <div className="bag">
-            <ul>
-              {items.map(item => (
-                <BagItem key={RichText.asText(item.name)} item={item} bag={bag} />
-              ))}
-            </ul>
-            <CheckOut price={getTotal()} store={store} setStore={setStore} clearBag={clearBag} />
-          </div>
+          <>
+            <h1>Bag</h1>
+            <div className="bag">
+              <ul>
+                {items.map(item => (
+                  <BagItem key={RichText.asText(item.name)} item={item} bag={bag} />
+                ))}
+              </ul>
+              <CheckOut price={getTotal()} store={store} setStore={setStore} clearBag={clearBag} />
+            </div>
+          </>
         ) : (
           <div>
             <h1>Bag empty, come back here when you&#39;ve added some items.</h1>

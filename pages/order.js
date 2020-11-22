@@ -16,7 +16,7 @@ const Bag = ({ bag }) => {
       <main className="orderPage">
         {items ? (
           <div className="order">
-            <h1>Order Placed for {location.name}, see you soon!</h1>
+            <h1>Order placed for {location.name}, see you soon!</h1>
             {console.log(order.store)}
             <ul>
               {items.map(item => (
