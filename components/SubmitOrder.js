@@ -3,7 +3,7 @@ import Router from 'next/router'
 
 import loading from '../public/loading.svg'
 
-export default function CheckOut({ toggleSubmit, clearBag }) {
+export default function CheckOut({ toggleSubmit, clearBag, store }) {
   const [nameOnCard, changeName] = useState('')
   const [cardNumber, changeCardNumber] = useState('')
   const [expiration, changeExpiration] = useState('')
@@ -22,7 +22,9 @@ export default function CheckOut({ toggleSubmit, clearBag }) {
   const handleSubmit = e => {
     e.preventDefault()
     const cardType = testCards(cardNumber)
-    if (!nameOnCard.match(/\s[a-zA-Z]/g)) {
+    if (store.name === null || store.name === undefined) {
+      changeError('Store')
+    } else if (!nameOnCard.match(/\s[a-zA-Z]/g)) {
       changeError('Name')
     } else if (!cardType) {
       changeError('Card')

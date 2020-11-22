@@ -28,7 +28,7 @@ export default function CheckOut({ price, store, setStore, clearBag }) {
         <b>Total:</b> <span className="price">${total}</span>
       </span>
       {submit ? (
-        <SubmitOrder price={total} toggleSubmit={toggleSubmit} clearBag={clearBag} />
+        <SubmitOrder price={total} toggleSubmit={toggleSubmit} clearBag={clearBag} store={store} />
       ) : (
         <button className="checkOutButton" onClick={() => toggleSubmit(true)}>
           Check Out
