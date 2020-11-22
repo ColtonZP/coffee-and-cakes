@@ -1,6 +1,7 @@
 .item {
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   margin: var(--l-spacing) 0;
   font-size: 1.6em;
 
@@ -57,20 +58,18 @@
   @media screen and (min-width: 540px) {
     flex-direction: row;
 
-    & img,
     & .info,
     & .nutrition {
-      width: 33%;
+      flex: 1 1 33%;
     }
 
     & .info {
-      flex-grow: 1;
       display: inline-block;
     }
 
     & img {
       align-self: flex-start;
-      max-width: 300px;
+      max-width: 200px;
     }
   }
 }
