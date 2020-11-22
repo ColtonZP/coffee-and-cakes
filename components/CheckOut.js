@@ -4,7 +4,7 @@ import SubmitOrder from './SubmitOrder'
 import StoreInfo from './StoreChanger'
 
 export default function CheckOut({ price, store, setStore, clearBag }) {
-  const [submit, toggleSubmit] = useState(true)
+  const [submit, toggleSubmit] = useState(false)
 
   const tax = (price * 0.15).toFixed(2)
   const total = (parseFloat(price) + parseFloat(tax)).toFixed(2)
