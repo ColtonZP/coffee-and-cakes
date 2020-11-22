@@ -7,7 +7,8 @@ import BagItem from '../components/BagItem'
 import CheckOut from '../components/CheckOut'
 
 const Bag = ({ bag }) => {
-  const { order, store } = bag
+  const { order } = bag
+  const { items, location } = order
 
   const getTotal = () => {
     let price = 0
@@ -25,11 +26,12 @@ const Bag = ({ bag }) => {
       </Head>
 
       <main className="orderPage">
-        {order.length > 0 ? (
+        {items ? (
           <div className="order">
-            <h1>Order Placed!</h1>
+            <h1>Order Placed for {location.name}, see you soon!</h1>
+            {console.log(order.store)}
             <ul>
-              {order.map(item => (
+              {items.map(item => (
                 <div className="orderItem" key={RichText.asText(item.name)}>
                   <img src={item.picture.url} alt={RichText.asText(item.name)} />
                   <span>

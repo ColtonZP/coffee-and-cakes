@@ -43,7 +43,7 @@ export default function Map({ setStore, store }) {
         options={options}>
         {Stores.map(location => (
           <Marker
-            key={location.sub}
+            key={location.name}
             position={{ lat: location.lat, lng: location.lng }}
             icon={{
               url: '/coffee_mug.svg',
@@ -59,14 +59,14 @@ export default function Map({ setStore, store }) {
             position={{ lat: selected.lat, lng: selected.lng }}
             onCloseClick={() => setSelected(null)}>
             <div>
-              <h1>{selected.sub}</h1>
+              <h1>{selected.name}</h1>
 
               <div className="address">
                 <address>{selected.address}</address>
                 <address>{selected.address2}</address>
               </div>
 
-              {store.sub != selected.sub ? (
+              {store.name != selected.name ? (
                 <button className="setLocationButton" onClick={() => setStore(selected)}>
                   Set pick up
                 </button>
