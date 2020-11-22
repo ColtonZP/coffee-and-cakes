@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import Router from 'next/router'
 
 import loading from '../public/loading.svg'
 
@@ -14,6 +15,7 @@ export default function CheckOut({ toggleSubmit, clearBag }) {
     submitting &&
       setTimeout(() => {
         clearBag()
+        Router.push('/order')
       }, 5000)
   })
 
