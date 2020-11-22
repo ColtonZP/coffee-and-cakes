@@ -24,9 +24,9 @@ const Bag = ({ bag }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="order">
+      <main className="orderPage">
         {order.length > 0 ? (
-          <>
+          <div className="order">
             <h1>Order Placed!</h1>
             <ul>
               {order.map(item => (
@@ -38,10 +38,10 @@ const Bag = ({ bag }) => {
                 </div>
               ))}
             </ul>
-          </>
+          </div>
         ) : (
           <div>
-            <span>No order found</span>
+            <h1>No order found</h1>
           </div>
         )}
       </main>

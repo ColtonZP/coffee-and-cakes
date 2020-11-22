@@ -23,8 +23,8 @@ const Bag = ({ bag }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
-        <h1>Order Placed!</h1>
+      <main className="bagPage">
+        <h1>Bag</h1>
         {items.length > 0 ? (
           <div className="bag">
             <ul>
@@ -36,7 +36,7 @@ const Bag = ({ bag }) => {
           </div>
         ) : (
           <div>
-            <span>Bag Empty</span>
+            <h1>Bag empty, come back here when you&#39;ve added some items.</h1>
           </div>
         )}
       </main>

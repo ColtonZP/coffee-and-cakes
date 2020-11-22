@@ -1,120 +1,124 @@
-.bag {
-  position: relative;
+.bagPage {
   padding: var(--l-spacing) 0;
 
-  @media screen and (min-width: 640px) {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-  }
-
-  & ul {
-    background-color: white;
-    border-radius: var(--round);
-    padding: 0 var(--spacing);
-    margin: 0 0 var(--l-spacing);
+  & .bag {
+    position: relative;
+    margin: var(--spacing) 0;
 
     @media screen and (min-width: 640px) {
-      flex-grow: 1;
-      margin-right: var(--l-spacing);
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
     }
 
-    & li {
-      font-size: 1.6em;
-    }
+    & ul {
+      background-color: white;
+      border-radius: var(--round);
+      padding: 0 var(--spacing);
+      margin: 0 0 var(--l-spacing);
 
-    & hr {
-      border-top: none;
-      border-bottom: 1px solid var(--orange);
-
-      &:last-child {
-        display: none;
+      @media screen and (min-width: 640px) {
+        flex-grow: 1;
+        margin-right: var(--l-spacing);
       }
-    }
-  }
 
-  & .checkOut {
-    padding: var(--spacing);
-    background: radial-gradient(ellipse at top right, #e79a57 10%, var(--orange) 90%);
-    border-radius: var(--round);
-    position: sticky;
-    width: 100%;
-    bottom: 0;
-    font-size: 1.6em;
-    overflow: hidden;
+      & li {
+        font-size: 1.6em;
+      }
 
-    @media screen and (min-width: 640px) {
-      width: 350px;
-      top: 100px;
-    }
+      & hr {
+        border-top: none;
+        border-bottom: 1px solid var(--orange);
 
-    & .location {
-      margin-bottom: var(--spacing);
-    }
-
-    & span,
-    & address {
-      display: block;
-      color: #333333;
-    }
-
-    & .checkOutButton {
-      font-size: 1em;
-      margin-top: var(--s-spacing);
-      width: 100%;
-      background: white;
-    }
-
-    & .price,
-    & .storeName {
-      display: block;
-      font-weight: bold;
-      font-size: 1.4em;
-      color: #000;
-    }
-
-    & .storeSelection {
-      & .storeName {
-        position: relative;
-        z-index: 2;
-        background: transparent;
-        padding: 0;
-        display: flex;
-        align-items: center;
-        white-space: nowrap;
-
-        & img {
-          width: 14px;
-          margin-left: var(--s-spacing);
+        &:last-child {
+          display: none;
         }
       }
+    }
 
-      & .store {
-        display: inline-block;
-        position: relative;
-        padding: 0;
-        margin: 0;
-        text-align: left;
+    & .checkOut {
+      padding: var(--spacing);
+      background: radial-gradient(ellipse at top right, #e79a57 10%, var(--orange) 90%);
+      border-radius: var(--round);
+      position: sticky;
+      width: 100%;
+      bottom: 0;
+      font-size: 1.6em;
+      overflow: hidden;
+
+      @media screen and (min-width: 640px) {
+        width: 350px;
+        top: 100px;
       }
 
-      & .storeOptions {
-        position: absolute;
-        top: -10px;
-        left: -10px;
-        width: calc(100% + var(--spacing));
-        overflow: scroll;
-        background: white;
-        padding: 3em var(--s-spacing) var(--s-spacing);
-        border-radius: var(--round);
+      & .location {
+        margin-bottom: var(--spacing);
+      }
 
-        & button {
-          background: inherit;
-          padding: var(--s-spacing) 0;
-          display: block;
-          width: 100%;
-          font-size: 1.6rem;
-          &:hover {
-            background: var(--white);
+      & span,
+      & address {
+        display: block;
+        color: #333333;
+      }
+
+      & .checkOutButton {
+        font-size: 1em;
+        margin-top: var(--s-spacing);
+        width: 100%;
+        background: white;
+      }
+
+      & .price,
+      & .storeName {
+        display: block;
+        font-weight: bold;
+        font-size: 1.4em;
+        color: #000;
+      }
+
+      & .storeSelection {
+        & .storeName {
+          position: relative;
+          z-index: 2;
+          background: transparent;
+          padding: 0;
+          display: flex;
+          align-items: center;
+          white-space: nowrap;
+
+          & img {
+            width: 14px;
+            margin-left: var(--s-spacing);
+          }
+        }
+
+        & .store {
+          display: inline-block;
+          position: relative;
+          padding: 0;
+          margin: 0;
+          text-align: left;
+        }
+
+        & .storeOptions {
+          position: absolute;
+          top: -10px;
+          left: -10px;
+          width: calc(100% + var(--spacing));
+          overflow: scroll;
+          background: white;
+          padding: 3em var(--s-spacing) var(--s-spacing);
+          border-radius: var(--round);
+
+          & button {
+            background: inherit;
+            padding: var(--s-spacing) 0;
+            display: block;
+            width: 100%;
+            font-size: 1.6rem;
+            &:hover {
+              background: var(--white);
+            }
           }
         }
       }
