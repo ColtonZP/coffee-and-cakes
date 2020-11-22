@@ -1,22 +1,10 @@
 import Head from 'next/head'
 import { observer } from 'mobx-react-lite'
 import { RichText } from 'prismic-reactjs'
-import Router from 'next/router'
-
-import BagItem from '../components/BagItem'
-import CheckOut from '../components/CheckOut'
 
 const Bag = ({ bag }) => {
   const { order } = bag
   const { items, location } = order
-
-  const getTotal = () => {
-    let price = 0
-
-    items.forEach(item => (price += item.price * item.quantity))
-
-    return price.toFixed(2)
-  }
 
   return (
     <div className="container">
