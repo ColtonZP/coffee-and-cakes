@@ -20,7 +20,12 @@ export default function Drinks({ coffee, bag, tea }) {
 
         <div className="itemGrid">
           {coffee.map(coffee => (
-            <Drink key={RichText.asText(coffee.data.name)} drink={coffee} addItem={addItem} />
+            <Drink
+              key={RichText.asText(coffee.data.name)}
+              drink={coffee}
+              addItem={addItem}
+              type="coffee"
+            />
           ))}
         </div>
 
@@ -28,7 +33,7 @@ export default function Drinks({ coffee, bag, tea }) {
 
         <div className="itemGrid">
           {tea.map(tea => (
-            <Drink key={RichText.asText(tea.data.name)} drink={tea} addItem={addItem} />
+            <Drink key={RichText.asText(tea.data.name)} drink={tea} addItem={addItem} type="tea" />
           ))}
         </div>
       </main>

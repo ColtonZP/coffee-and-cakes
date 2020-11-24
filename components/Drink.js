@@ -1,7 +1,7 @@
 import { RichText } from 'prismic-reactjs'
 import Link from 'next/link'
 
-export default function CheckOut({ drink, addItem }) {
+export default function CheckOut({ drink, addItem, type }) {
   const hasBadge = drink => {
     const day = new Date(drink.last_publication_date)
     day.setDate(day.getDate() + 30)
@@ -31,7 +31,7 @@ export default function CheckOut({ drink, addItem }) {
       <div className="buttonGroup">
         <button onClick={() => addItem(drink.data)}>Add</button>
 
-        <Link href={`/drinks/${drink.uid}`}>
+        <Link href={`/drinks/${type}/${drink.uid}`}>
           <button>More Info</button>
         </Link>
       </div>

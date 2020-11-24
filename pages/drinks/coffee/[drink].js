@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import { RichText } from 'prismic-reactjs'
 
-import { Client } from '../../lib/prismic-config'
+import { Client } from '../../../lib/prismic-config'
 
 const Drink = ({ item, bag }) => {
   const { addItem } = bag
@@ -46,10 +46,7 @@ const Drink = ({ item, bag }) => {
 }
 
 export async function getServerSideProps({ query }) {
-  let item = await Client().getByUID('coffee', query.drink)
-  if (item === undefined) {
-    item = await Client().getByUID('tea', query.drink)
-  }
+  const item = await Client().getByUID('coffee', query.drink)
 
   return { props: { item } }
 }
