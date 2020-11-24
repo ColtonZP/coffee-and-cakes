@@ -46,7 +46,10 @@ const Drink = ({ item, bag }) => {
 }
 
 export async function getServerSideProps({ query }) {
-  const item = await Client().getByUID('coffee', query.drink)
+  let item = await Client().getByUID('coffee', query.drink)
+  if (item === undefined) {
+    item = await Client().getByUID('tea', query.drink)
+  }
 
   return { props: { item } }
 }
