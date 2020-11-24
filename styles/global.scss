@@ -27,6 +27,12 @@
   --xl-spacing: 80px;
 
   --round: 10px;
+
+  @media screen and (max-width: 540px) {
+    --spacing: 10px;
+    --l-spacing: 20px;
+    --xl-spacing: 40px;
+  }
 }
 
 html,
