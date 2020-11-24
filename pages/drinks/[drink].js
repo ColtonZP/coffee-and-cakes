@@ -28,19 +28,13 @@ const Drink = ({ item, bag }) => {
             <b>Calories</b> {item.data.calories}
           </span>
           <span>
-            <b>Fat</b> {item.data.calories}g
+            <b>Fat</b> {Math.floor(Math.random() * 10) + 4}g
           </span>
           <span>
-            <b>Cholesterol</b> {item.data.calories}mg
+            <b>Sodium</b> {Math.floor(Math.random() * 250) + 4}mg
           </span>
           <span>
-            <b>Sodium</b> {item.data.calories}mg
-          </span>
-          <span>
-            <b>Carbohydrates</b> {item.data.calories}g
-          </span>
-          <span>
-            <b>Protein</b> {item.data.calories}mg
+            <b>Carbohydrates</b> {Math.floor(Math.random() * 30)}g
           </span>
           <span>
             <b>Caffeine</b> {item.data.caffeine}mg
