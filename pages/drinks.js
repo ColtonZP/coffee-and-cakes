@@ -4,20 +4,10 @@ import Prismic from 'prismic-javascript'
 import { RichText } from 'prismic-reactjs'
 
 import { Client } from '../lib/prismic-config'
-import add from '../public/add.svg'
+import Drink from '../components/Drink'
 
-export default function Drinks({ coffee, bag }) {
+export default function Drinks({ coffee, bag, tea }) {
   const { addItem } = bag
-
-  const isBadge = coffee => {
-    const day = new Date(coffee.last_publication_date)
-    day.setDate(day.getDate() + 30)
-    if (coffee.data.seasonal) {
-      return <span className="badge">Seasonal</span>
-    } else if (day >= new Date()) {
-      return <span className="badge">New</span>
-    }
-  }
 
   return (
     <div className="container">
@@ -27,31 +17,18 @@ export default function Drinks({ coffee, bag }) {
       </Head>
       <main className="drinks">
         <h1>Coffee</h1>
+
         <div className="itemGrid">
           {coffee.map(coffee => (
-            <div className="itemCard" key={RichText.asText(coffee.data.name)}>
-              <img
-                className="photo"
-                src={coffee.data.picture && coffee.data.picture.url}
-                alt={RichText.asText(coffee.data.name)}
-              />
+            <Drink key={RichText.asText(coffee.data.name)} drink={coffee} addItem={addItem} />
+          ))}
+        </div>
 
-              <h2>
-                {isBadge(coffee)} {RichText.asText(coffee.data.name)}
-              </h2>
+        <h1>Tea</h1>
 
-              {/* {RichText.render(coffee.data.description)} */}
-
-              <span className="price">${coffee.data.price.toFixed(2)}</span>
-
-              <div className="buttonGroup">
-                <button onClick={() => addItem(coffee.data)}>Add</button>
-
-                <Link href={`/drinks/${coffee.uid}`}>
-                  <button>More Info</button>
-                </Link>
-              </div>
-            </div>
+        <div className="itemGrid">
+          {tea.map(tea => (
+            <Drink key={RichText.asText(tea.data.name)} drink={tea} addItem={addItem} />
           ))}
         </div>
       </main>
@@ -61,6 +38,7 @@ export default function Drinks({ coffee, bag }) {
 
 export async function getServerSideProps() {
   const coffee = await Client().query(Prismic.Predicates.at('document.type', 'coffee'))
+  const tea = await Client().query(Prismic.Predicates.at('document.type', 'tea'))
 
-  return { props: { coffee: coffee.results } }
+  return { props: { coffee: coffee.results, tea: tea.results } }
 }
