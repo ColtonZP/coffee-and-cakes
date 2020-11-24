@@ -4,9 +4,9 @@ import Prismic from 'prismic-javascript'
 import { RichText } from 'prismic-reactjs'
 
 import { Client } from '../lib/prismic-config'
-import Drink from '../components/Drink'
+import Food from '../components/Food'
 
-export default function Drinks({ bakery, sweets, bag }) {
+export default function Foods({ bakery, sweets, bag }) {
   const { addItem } = bag
 
   return (
@@ -20,9 +20,9 @@ export default function Drinks({ bakery, sweets, bag }) {
 
         <div className="itemGrid">
           {bakery.map(bakery => (
-            <Drink
+            <Food
               key={RichText.asText(bakery.data.name)}
-              drink={bakery}
+              item={bakery}
               addItem={addItem}
               type="bakery"
             />
@@ -33,11 +33,11 @@ export default function Drinks({ bakery, sweets, bag }) {
 
         <div className="itemGrid">
           {sweets.map(sweets => (
-            <Drink
+            <Food
               key={RichText.asText(sweets.data.name)}
-              drink={sweets}
+              item={sweets}
               addItem={addItem}
-              type="tea"
+              type="sweets"
             />
           ))}
         </div>
