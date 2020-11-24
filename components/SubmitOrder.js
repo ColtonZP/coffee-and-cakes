@@ -104,7 +104,6 @@ export default function CheckOut({ toggleSubmit, clearBag, store }) {
           Cancel
         </button>
         <span className="disclaimer">** FOR DEMO ONLY **</span>
-        <span className="disclaimer">** DOES NOT CHARGE CARD **</span>
       </form>
       {submitting && (
         <div className="loadingDiv">
