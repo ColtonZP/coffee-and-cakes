@@ -74,27 +74,20 @@ export default function Home({ home }) {
 export async function getServerSideProps() {
   const home = await Client()
     .getSingle('home_page')
-    .then(async res => {
-      const ad_1_info = await Client()
+    .then(async res => ({
+      ad_1: await Client()
         .getByID(res.data.ad_1.id)
-        .then(res => res.data)
+        .then(res => res.data),
 
-      const ad_1_item = await Client()
+      ad_1_item: await Client()
         .getByID(res.data.ad_1.id)
         .then(
           async res =>
             await Client()
               .getByUID(res.data.item.type, res.data.item.uid)
               .then(res => res.data),
-        )
-
-      const ads = {
-        ad_1: ad_1_info,
-        ad_1_item: ad_1_item,
-      }
-
-      return ads
-    })
+        ),
+    }))
 
   return { props: { home } }
 }
