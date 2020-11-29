@@ -7,7 +7,6 @@ import { Client } from '../lib/prismic-config'
 export default function Home({ home }) {
   const { ad_1, ad_1_item, ad_2, ad_2_item, ad_3, ad_3_item } = home
 
-  console.log(home)
   return (
     <div className="container">
       <Head>
@@ -76,47 +75,31 @@ export default function Home({ home }) {
 }
 
 export async function getServerSideProps() {
+  const getAd = id =>
+    Client()
+      .getByID(id)
+      .then(res => res.data)
+
+  const getItem = id =>
+    Client()
+      .getByID(id)
+      .then(res =>
+        Client()
+          .getByUID(res.data.item.type, res.data.item.uid)
+          .then(res => res.data),
+      )
+
   const home = await Client()
     .getSingle('home_page')
     .then(async res => ({
-      ad_1: await Client()
-        .getByID(res.data.ad_1.id)
-        .then(res => res.data),
+      ad_1: await getAd(res.data.ad_1.id),
+      ad_1_item: await getItem(res.data.ad_1.id),
 
-      ad_1_item: await Client()
-        .getByID(res.data.ad_1.id)
-        .then(
-          async res =>
-            await Client()
-              .getByUID(res.data.item.type, res.data.item.uid)
-              .then(res => res.data),
-        ),
+      ad_2: await getAd(res.data.ad_2.id),
+      ad_2_item: await getItem(res.data.ad_2.id),
 
-      ad_2: await Client()
-        .getByID(res.data.ad_2.id)
-        .then(res => res.data),
-
-      ad_2_item: await Client()
-        .getByID(res.data.ad_2.id)
-        .then(
-          async res =>
-            await Client()
-              .getByUID(res.data.item.type, res.data.item.uid)
-              .then(res => res.data),
-        ),
-
-      ad_3: await Client()
-        .getByID(res.data.ad_3.id)
-        .then(res => res.data),
-
-      ad_3_item: await Client()
-        .getByID(res.data.ad_3.id)
-        .then(
-          async res =>
-            await Client()
-              .getByUID(res.data.item.type, res.data.item.uid)
-              .then(res => res.data),
-        ),
+      ad_3: await getAd(res.data.ad_3.id),
+      ad_3_item: await getItem(res.data.ad_3.id),
     }))
 
   return { props: { home } }
