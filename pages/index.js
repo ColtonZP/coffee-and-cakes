@@ -8,13 +8,13 @@ export default function Home({ home }) {
   const { ad_1, ad_1_item, ad_2, ad_2_item, ad_3, ad_3_item } = home
 
   return (
-    <div className="container">
+    <div>
       <Head>
         <title>Coffee Demo</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
+      <main className="container">
         <div className="jumbotron">
           <div className="block">
             <img className="background" src={ad_1.background.url} alt="" />
@@ -56,20 +56,43 @@ export default function Home({ home }) {
           </div>
         </div>
 
-        <div className="options">
+        <div className="specials">
           <div className="block">{/* happy hour */}</div>
           <div className="block">{/* delivery */}</div>
           <div className="block">{/* contactless order and pick up */}</div>
-          <div className="block">{/* specials */}</div>
-        </div>
-
-        <div className="contact">
-          {/*
-              email list
-              social links
-          */}
         </div>
       </main>
+
+      <footer className="contact">
+        <h1 className="container">Stay connected!</h1>
+
+        <div className="container">
+          <div className="email">
+            <h2>Sign up for the news letter</h2>
+            <form>
+              <input type="email" />
+              <input type="submit" />
+            </form>
+          </div>
+
+          <div className="social">
+            <h2>Get social with us</h2>
+            <div className="links">
+              <a href="/">
+                <img src="" alt="facebook" />
+              </a>
+              <a href="/">
+                <img src="" alt="instagram" />
+              </a>
+              <a href="/">
+                <img src="" alt="twitter" />
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div className="siteMap"></div>
+      </footer>
     </div>
   )
 }

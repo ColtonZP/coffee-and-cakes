@@ -52,7 +52,8 @@ h1 {
   font-size: 4rem;
 }
 
-button {
+button,
+input[type='submit'] {
   background: var(--orange);
   border: none;
   border-radius: var(--round);
@@ -60,6 +61,7 @@ button {
   padding: var(--xs-spacing) var(--s-spacing);
   font-size: 1.6em;
   outline: none;
+
   &:active {
     background: #c4722f;
   }
@@ -67,6 +69,7 @@ button {
 
 ul {
   padding: 0;
+
   & li {
     list-style: none;
   }
