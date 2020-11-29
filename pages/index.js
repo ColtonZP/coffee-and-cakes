@@ -5,7 +5,7 @@ import { RichText } from 'prismic-reactjs'
 import { Client } from '../lib/prismic-config'
 
 export default function Home({ home }) {
-  // const ad_1_item = Client().getByUID('bakery', home.data.ad_1_item.uid)
+  const { ad_1, ad_1_item, ad_2, ad_2_item, ad_3, ad_3_item } = home
 
   console.log(home)
   return (
@@ -17,40 +17,44 @@ export default function Home({ home }) {
 
       <main>
         <div className="jumbotron">
-          {/* <div className="block">
-            <img className="background" src={home.data.ad_1_background.url} alt="" />
+          <div className="block">
+            <img className="background" src={ad_1.background.url} alt="" />
             <div className="ad">
-              <img className="itemImage" src={ad_1_item.data.picture.url} alt="" />
+              <img className="itemImage" src={ad_1_item.picture.url} alt="" />
               <div className="info">
-                {RichText.render(home.data.ad_1_description)}
-                <Link href={`/${home.data.category}/${home.data.type}/${ad_1_item.uid}`}>
+                {RichText.render(ad_1.description)}
+                <Link href={`/${ad_1.category}/${ad_1.type}/${ad_1.item.uid}`}>
                   <button>Get it now</button>
                 </Link>
-              </div>
-            </div>
-          </div> */}
-
-          {/* <div className="block">
-            <img className="background" src={home.data.ad_2_background.url} alt="" />
-            <div className="ad">
-              <img className="itemImage" src={home.data.ad_2_coffee.url} alt="" />
-              <div className="info">
-                {RichText.render(home.data.ad_2_description)}
-                <button>Get it now</button>
               </div>
             </div>
           </div>
 
           <div className="block">
-            <img className="background" src={home.data.ad_3_background.url} alt="" />
+            <img className="background" src={ad_2.background.url} alt="" />
             <div className="ad">
-              <img className="itemImage" src={home.data.ad_3_coffee.url} alt="" />
+              <img className="itemImage" src={ad_2_item.picture.url} alt="" />
               <div className="info">
-                {RichText.render(home.data.ad_3_description)}
-                <button>Get it now</button>
+                {RichText.render(ad_2.description)}
+                <Link href={`/${ad_2.category}/${ad_2.type}/${ad_2.item.uid}`}>
+                  <button>Get it now</button>
+                </Link>
               </div>
             </div>
-          </div> */}
+          </div>
+
+          <div className="block">
+            <img className="background" src={ad_3.background.url} alt="" />
+            <div className="ad">
+              <img className="itemImage" src={ad_3_item.picture.url} alt="" />
+              <div className="info">
+                {RichText.render(ad_3.description)}
+                <Link href={`/${ad_3.category}/${ad_3.type}/${ad_3.item.uid}`}>
+                  <button>Get it now</button>
+                </Link>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div className="options">
@@ -81,6 +85,32 @@ export async function getServerSideProps() {
 
       ad_1_item: await Client()
         .getByID(res.data.ad_1.id)
+        .then(
+          async res =>
+            await Client()
+              .getByUID(res.data.item.type, res.data.item.uid)
+              .then(res => res.data),
+        ),
+
+      ad_2: await Client()
+        .getByID(res.data.ad_2.id)
+        .then(res => res.data),
+
+      ad_2_item: await Client()
+        .getByID(res.data.ad_2.id)
+        .then(
+          async res =>
+            await Client()
+              .getByUID(res.data.item.type, res.data.item.uid)
+              .then(res => res.data),
+        ),
+
+      ad_3: await Client()
+        .getByID(res.data.ad_3.id)
+        .then(res => res.data),
+
+      ad_3_item: await Client()
+        .getByID(res.data.ad_3.id)
         .then(
           async res =>
             await Client()
