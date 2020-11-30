@@ -3,6 +3,9 @@ import Link from 'next/link'
 import { RichText } from 'prismic-reactjs'
 
 import { Client } from '../lib/prismic-config'
+import facebook from '../public/facebook.svg'
+import instagram from '../public/instagram.svg'
+import twitter from '../public/twitter.svg'
 
 export default function Home({ home }) {
   const { ad_1, ad_1_item, ad_2, ad_2_item, ad_3, ad_3_item } = home
@@ -79,13 +82,13 @@ export default function Home({ home }) {
             <h2>Get social with us</h2>
             <div className="links">
               <a href="/">
-                <img src="" alt="facebook" />
+                <img src={facebook} alt="facebook" />
               </a>
               <a href="/">
-                <img src="" alt="instagram" />
+                <img src={instagram} alt="instagram" />
               </a>
               <a href="/">
-                <img src="" alt="twitter" />
+                <img src={twitter} alt="twitter" />
               </a>
             </div>
           </div>

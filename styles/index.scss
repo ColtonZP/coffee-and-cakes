@@ -101,37 +101,41 @@
     }
   }
 
-  & .email form {
-    width: calc(100% - var(--spacing));
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    padding: var(--xs-spacing) var(--xs-spacing) var(--xs-spacing) 0;
-    background: white;
-    border-radius: 20px;
-    overflow: hidden;
+  & .email {
+    margin: 0 var(--spacing) var(--spacing) 0;
 
-    & input {
-      font-size: 1.6em;
-      padding: var(--xs-spacing) var(--s-spacing);
-      outline: none;
-      border: none;
-    }
+    & form {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      padding: var(--xs-spacing) var(--xs-spacing) var(--xs-spacing) 0;
+      background: white;
+      border-radius: 25px;
+      overflow: hidden;
 
-    & input[type='email'] {
-      flex-grow: 1;
-    }
+      & input {
+        font-size: 1.6em;
+        padding: var(--xs-spacing) var(--s-spacing);
+        outline: none;
+        border: none;
+      }
 
-    & input[type='submit'] {
-      border-radius: 20px;
-      padding: var(--xs-spacing) var(--spacing);
+      & input[type='email'] {
+        flex-grow: 1;
+      }
+
+      & input[type='submit'] {
+        border-radius: 20px;
+        padding: var(--xs-spacing) var(--spacing);
+      }
     }
   }
 
-  & .social .links {
-    margin-right: var(--spacing);
-    width: 50px;
-    height: 50px;
+  & .social .links a img {
+    margin-right: var(--l-spacing);
+    width: 38px;
+    height: 38px;
     display: inline;
   }
 }
