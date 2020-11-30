@@ -16,7 +16,7 @@ export default function Drinks({ coffee, bag, tea }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="drinks">
-        <h1>Coffee</h1>
+        <h1 id="coffee">Coffee</h1>
 
         <div className="itemGrid">
           {coffee.map(coffee => (
@@ -29,7 +29,7 @@ export default function Drinks({ coffee, bag, tea }) {
           ))}
         </div>
 
-        <h1>Tea</h1>
+        <h1 id="tea">Tea</h1>
 
         <div className="itemGrid">
           {tea.map(tea => (

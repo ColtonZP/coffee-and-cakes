@@ -79,11 +79,11 @@
 }
 
 .contact {
-  padding: var(--spacing);
   background: radial-gradient(ellipse at top right, #e79a57 10%, var(--orange) 90%);
+  padding: var(--l-spacing) 0;
 
   & h1 {
-    margin-bottom: var(--spacing);
+    margin-bottom: var(--l-spacing);
   }
 
   & h2 {
@@ -134,8 +134,27 @@
 
   & .social .links a img {
     margin-right: var(--l-spacing);
+    margin-bottom: var(--spacing);
     width: 38px;
     height: 38px;
     display: inline;
+  }
+
+  & .siteMap {
+    margin-top: 0;
+    // justify-content: start;
+    align-items: flex-start;
+    font-size: 1.2em;
+
+    & > div {
+      flex: 0;
+      margin-right: var(--l-spacing);
+    }
+
+    & h3 {
+      font-size: 1.4em;
+      white-space: nowrap;
+      margin-bottom: var(--xs-spacing);
+    }
   }
 }

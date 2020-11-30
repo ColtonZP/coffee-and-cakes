@@ -94,7 +94,49 @@ export default function Home({ home }) {
           </div>
         </div>
 
-        <div className="siteMap"></div>
+        <div className="siteMap container">
+          <div className="drinkLinks">
+            <h3>
+              <Link href="/drinks">Drinks</Link>
+            </h3>
+
+            <ul>
+              <li>
+                <Link href="/drinks#coffee">Coffee</Link>
+              </li>
+              <li>
+                <Link href="/drinks#tea">Tea</Link>
+              </li>
+            </ul>
+          </div>
+
+          <div className="foodLinks">
+            <h3>
+              <Link href="/food">Food</Link>
+            </h3>
+
+            <ul>
+              <li>
+                <Link href="/food#bakery">Bakery</Link>
+              </li>
+              <li>
+                <Link href="/food#sweets">Sweets</Link>
+              </li>
+            </ul>
+          </div>
+
+          <div className="store">
+            <h3>
+              <Link href="/find-a-store">Find a store</Link>
+            </h3>
+          </div>
+
+          <div className="bag">
+            <h3>
+              <Link href="/bag">Bag</Link>
+            </h3>
+          </div>
+        </div>
       </footer>
     </div>
   )

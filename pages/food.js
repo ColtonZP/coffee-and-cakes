@@ -16,7 +16,7 @@ export default function Foods({ bakery, sweets, bag }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="drinks">
-        <h1>Bakery</h1>
+        <h1 id="bakery">Bakery</h1>
 
         <div className="itemGrid">
           {bakery.map(bakery => (
@@ -29,7 +29,7 @@ export default function Foods({ bakery, sweets, bag }) {
           ))}
         </div>
 
-        <h1>Sweets</h1>
+        <h1 id="sweets">Sweets</h1>
 
         <div className="itemGrid">
           {sweets.map(sweets => (
