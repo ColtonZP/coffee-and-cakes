@@ -60,9 +60,17 @@ export default function Home({ home }) {
         </div>
 
         <div className="specials">
-          <div className="block">{/* happy hour */}</div>
-          <div className="block">{/* delivery */}</div>
-          <div className="block">{/* contactless order and pick up */}</div>
+          <div className="block">
+            <h1>Where now delivering with Uber Eats!</h1>
+          </div>
+
+          <div className="block">
+            <h1>Join us for happy hour everyday at 2 pm!</h1>
+          </div>
+
+          <div className="block">
+            <h1>Order now for contactless pick up</h1>
+          </div>
         </div>
       </main>
 
