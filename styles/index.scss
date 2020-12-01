@@ -24,13 +24,14 @@
       flex-direction: column;
       flex-grow: 1;
       align-items: center;
-      margin: var(--spacing);
+      align-content: center;
+      margin-bottom: var(--spacing);
 
       & p {
-        font-size: 2em;
+        font-size: 2.6em;
         text-align: center;
         margin-top: 0;
-        margin: var(--spacing);
+        margin: 0 var(--spacing) var(--spacing) var(--spacing);
       }
     }
 
@@ -47,11 +48,7 @@
       flex-direction: row;
 
       & .info {
-        margin-top: var(--spacing);
-
-        & p {
-          font-size: 2.8em;
-        }
+        margin: 0;
       }
 
       & .itemImage {
@@ -94,7 +91,7 @@
 
     & h1 {
       color: white;
-      font-size: 2.4em;
+      font-size: 2.6em;
     }
   }
 }
@@ -123,7 +120,7 @@
   }
 
   & .email {
-    margin: 0 var(--spacing) var(--l-spacing) 0;
+    margin: 0 var(--l-spacing) var(--l-spacing) 0;
 
     & form {
       width: 100%;
