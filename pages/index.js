@@ -19,42 +19,39 @@ export default function Home({ home }) {
 
       <main className="container">
         <div className="jumbotron">
-          <div className="block">
-            <img className="background" src={ad_1.background.url} alt="" />
-            <div className="ad">
-              <img className="itemImage" src={ad_1_item.picture.url} alt="" />
-              <div className="info">
-                {RichText.render(ad_1.description)}
-                <Link href={`/${ad_1.category}/${ad_1.type}/${ad_1.item.uid}`}>
-                  <button>Get it now</button>
-                </Link>
-              </div>
+          <div
+            className="block"
+            style={{ background: `white url(${ad_1.background.url}) center/cover` }}>
+            <img className="itemImage" src={ad_1_item.picture.url} alt="" />
+            <div className="info">
+              {RichText.render(ad_1.description)}
+              <Link href={`/${ad_1.category}/${ad_1.type}/${ad_1.item.uid}`}>
+                <button>Get it now</button>
+              </Link>
             </div>
           </div>
 
-          <div className="block">
-            <img className="background" src={ad_2.background.url} alt="" />
-            <div className="ad">
-              <img className="itemImage" src={ad_2_item.picture.url} alt="" />
-              <div className="info">
-                {RichText.render(ad_2.description)}
-                <Link href={`/${ad_2.category}/${ad_2.type}/${ad_2.item.uid}`}>
-                  <button>Get it now</button>
-                </Link>
-              </div>
+          <div
+            className="block"
+            style={{ background: `white url(${ad_2.background.url}) center/cover` }}>
+            <img className="itemImage" src={ad_2_item.picture.url} alt="" />
+            <div className="info">
+              {RichText.render(ad_2.description)}
+              <Link href={`/${ad_2.category}/${ad_2.type}/${ad_2.item.uid}`}>
+                <button>Get it now</button>
+              </Link>
             </div>
           </div>
 
-          <div className="block">
-            <img className="background" src={ad_3.background.url} alt="" />
-            <div className="ad">
-              <img className="itemImage" src={ad_3_item.picture.url} alt="" />
-              <div className="info">
-                {RichText.render(ad_3.description)}
-                <Link href={`/${ad_3.category}/${ad_3.type}/${ad_3.item.uid}`}>
-                  <button>Get it now</button>
-                </Link>
-              </div>
+          <div
+            className="block"
+            style={{ background: `white url(${ad_3.background.url}) center/cover` }}>
+            <img className="itemImage" src={ad_3_item.picture.url} alt="" />
+            <div className="info">
+              {RichText.render(ad_3.description)}
+              <Link href={`/${ad_3.category}/${ad_3.type}/${ad_3.item.uid}`}>
+                <button>Get it now</button>
+              </Link>
             </div>
           </div>
         </div>
