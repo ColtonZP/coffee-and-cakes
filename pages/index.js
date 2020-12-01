@@ -8,7 +8,17 @@ import instagram from '../public/instagram.svg'
 import twitter from '../public/twitter.svg'
 
 export default function Home({ home }) {
-  const { ad_1, ad_1_item, ad_2, ad_2_item, ad_3, ad_3_item } = home
+  const {
+    ad_1,
+    ad_1_item,
+    ad_2,
+    ad_2_item,
+    ad_3,
+    ad_3_item,
+    special_1,
+    special_2,
+    special_3,
+  } = home
 
   return (
     <div>
@@ -57,16 +67,22 @@ export default function Home({ home }) {
         </div>
 
         <div className="specials">
-          <div className="block">
-            <h1>Where now delivering with Uber Eats!</h1>
+          <div
+            className="block"
+            style={{ background: `white url(${special_1.background.url}) center/cover` }}>
+            {RichText.render(special_1.description)}
           </div>
 
-          <div className="block">
-            <h1>Join us for happy hour everyday at 2 pm!</h1>
+          <div
+            className="block"
+            style={{ background: `white url(${special_2.background.url}) center/cover` }}>
+            {RichText.render(special_2.description)}
           </div>
 
-          <div className="block">
-            <h1>Order now for contactless pick up</h1>
+          <div
+            className="block"
+            style={{ background: `white url(${special_3.background.url}) center/cover` }}>
+            {RichText.render(special_3.description)}
           </div>
         </div>
       </main>
@@ -162,6 +178,11 @@ export async function getServerSideProps() {
           .then(res => res.data),
       )
 
+  const getSpecial = id =>
+    Client()
+      .getByID(id)
+      .then(res => res.data)
+
   const home = await Client()
     .getSingle('home_page')
     .then(async res => ({
@@ -173,6 +194,10 @@ export async function getServerSideProps() {
 
       ad_3: await getAd(res.data.ad_3.id),
       ad_3_item: await getItem(res.data.ad_3.id),
+
+      special_1: await getSpecial(res.data.special_1.id),
+      special_2: await getSpecial(res.data.special_2.id),
+      special_3: await getSpecial(res.data.special_3.id),
     }))
 
   return { props: { home } }
